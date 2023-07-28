@@ -1,0 +1,275 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Encode Sans Condensed', sans-serif;
+} 
+
+
+body{
+    background-color: rgba(217, 217, 217, 1);
+}
+
+.inicio{
+    width: 100%;
+    height: 40.25rem;
+    background-image: url(https://images.unsplash.com/photo-1610045944237-b06313ab8cb7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+footer{
+    background-color:rgba(82, 109, 130, 1) ;
+padding: 3%;
+width: 100%;
+
+}
+
+footer section{
+    display: flex;
+    gap: 1.875rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* bases */
+
+
+nav{
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    background-color: rgba(156, 171, 193, 0.5);
+    box-shadow: 2px 0px 10px black;
+}
+
+
+
+
+h1{
+    color:rgba(39, 55, 77, 1) ;
+    font-size: 500%;
+    margin-left: 2%;
+font-style: oblique;
+}
+
+
+
+a{
+    text-decoration: none;
+}
+
+button{
+    width: 3.125rem;
+    height: 1.25rem;
+}
+
+ul{
+    display: flex;
+    gap: 1.25rem;
+    justify-content: end;
+}
+
+li{
+    
+    list-style: none;
+    
+}
+
+/* generales */
+
+.centro{
+width: 100%;
+height: 31.25rem;
+}
+
+
+.medio{
+    background-color:rgba(157, 178, 191, 1);
+display: flex;
+width: 100%;
+height: 25rem;
+overflow: scroll;
+align-items: center;
+margin: 5% 0px 5% 0px;
+}
+
+
+.medio img{
+    width: 15.625rem;
+    height: 20.75rem;
+    margin: 0.5%;
+    
+}
+
+
+
+.medio2{
+    background-color: rgba(82, 109, 130, 1);
+margin-bottom: 12.5rem;
+padding: 5%;
+}
+
+.medio2 img{
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+    margin: 5%;
+box-shadow: 2px 2px 5px black;
+}
+
+/* medio/main de index */
+
+.primerObras{
+    display: flex;
+    justify-content: center;
+
+}
+
+.primerObras article{
+    position: relative;
+        margin: 5% 2%;
+}
+
+.primerObras img{
+    width: 15.625rem;
+    border: .625rem solid rgb(44, 41, 25);
+    box-shadow: 0px 0px 15px rgba(39, 55, 77, 1);
+}
+
+.primerObras img:hover{
+    width: 15.625rem;
+    border: .625rem solid rgb(44, 41, 25);
+    box-shadow: 5px 5px 10px rgb(237, 238, 157);
+}
+
+
+.primerObras p{
+    background-color: rgb(183, 209, 209);
+    position: absolute;
+    bottom: 2%;
+    left: 40%;
+}
+
+/*obras*/
+
+.artistas img{
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+}
+
+.artistas{
+    padding: 2%;
+    margin: 2%;
+    background-color: rgba(39, 55, 77, 1);
+}
+
+.artistas p{
+    color: rgba(157, 178, 191, 1);
+}
+
+
+
+.ayud{
+    display: inline;
+}
+
+.ayu{
+    background-color: rgba(39, 55, 77, 1);
+    height: 40rem;
+    margin: 3.125rem 1.25rem ;
+    padding: 10% 5%;
+}
+
+.ayu h2{
+    color: rgba(217, 217, 217, 1);
+    font-size: 4.5rem;
+}
+
+.ayu p{
+    color: rgba(217, 217, 217, 1);
+    font-size: 1.75rem;
+}
+
+
+
+.barra ul{
+    display: flex;
+    justify-content: start;
+    padding: 1.25rem;
+    background-color: rgba(82, 109, 130, 1);
+}
+
+
+
+.acercaDe{
+    background-color: rgba(39, 55, 77, 1);
+    height: 50rem;
+    margin: 3.125rem 1.25rem ;
+    padding: 10% 5%;
+}
+
+.acercaDe h2{
+    color: rgba(217, 217, 217, 1);
+    font-size: 4.5rem;
+}
+
+.acercaDe p{
+    color: rgba(217, 217, 217, 1);
+    font-size: 1.75rem;
+}
+
+
+
+.obraEspacio img{
+    width: 32.5rem;
+    margin: 5.25rem;
+    box-shadow: 0px 0px 10px rgb(202, 189, 116);
+}
+
+
+
+.obraLado{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.obraLado p{
+    width: 25.25rem;
+}
+
+.compra{
+    display: flex;
+}
+
+.obraArte img{
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+
+}
+
+
+.datosArtista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.datosArtista section{
+    display: flex;
+
+}
+
+
+.bx{
+    font-size: 1.875rem;
+}
