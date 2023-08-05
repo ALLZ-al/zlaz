@@ -1,13 +1,48 @@
- *{
+  *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Encode Sans Condensed', sans-serif;
 } 
 
+.grid-index{
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr 6.25rem ;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "footer footer footer"
+    ;
+}
+
+.grid-pages{
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 8.3125rem 2fr 6.25rem ;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "footer footer footer"
+    ;
+}
 
 body{
     background-color: rgba(217, 217, 217, 1);
+}
+
+header{
+    grid-area: header;
+}
+main{
+    grid-area: main;
+}
+footer{
+    grid-area: footer;
 }
 
 .inicio{
@@ -19,6 +54,7 @@ body{
     background-position: center;
 
 }
+
 
 
 footer{
@@ -38,16 +74,14 @@ footer section{
 
 /* bases */
 
-
+ 
 nav{
     position: sticky;
     top: 0px;
     width: 100%;
     background-color: rgba(156, 171, 193, 0.5);
     box-shadow: 2px 0px 10px black;
-}
-
-
+    }
 
 
 h1{
@@ -55,7 +89,7 @@ h1{
     font-size: 500%;
     margin-left: 2%;
 font-style: oblique;
-}
+} 
 
 
 
@@ -88,15 +122,41 @@ height: 31.25rem;
 }
 
 
-.medio{
-    background-color:rgba(157, 178, 191, 1);
-display: flex;
-width: 100%;
-height: 25rem;
-overflow: scroll;
-align-items: center;
-margin: 5% 0px 5% 0px;
+/* .galeria{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 25%);
+    grid-template-rows: 200px 200px 200px;
+    grid-template-areas: 
+    "im1 im2 im3"
+    "im1 im2 im3"
+    "im4 im4 im4"
+    ;
+    justify-content: center;
 }
+
+.galeria div{
+    width: 100%;
+    height: 100%;
+}
+.galeria div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.im1 {
+    grid-area: im1;
+}
+.im2 {
+    grid-area: im2 ;
+}
+.im3 {
+    grid-area: im3;
+}
+.im4 {
+    grid-area: im4;
+} */
 
 
 .medio img{
@@ -226,16 +286,19 @@ box-shadow: 2px 2px 5px black;
 
 
 
+
+
+
 .obraEspacio img{
-    width: 32.5rem;
-    margin: 5.25rem;
+    width: 100%;
     box-shadow: 0px 0px 10px rgb(202, 189, 116);
+    grid-area: ima;
 }
 
 
 
 .obraLado{
-    display: flex;
+    grid-area: venta;
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -247,8 +310,20 @@ box-shadow: 2px 2px 5px black;
 }
 
 .compra{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 12.5rem);
+    grid-template-rows: repeat(3, 12.5rem);
+    grid-template-areas: 
+    "ima ima . venta"
+    "ima ima . venta"
+    "ima ima . venta"
+    ;
 }
+
+
+
+
+
 
 .obraArte img{
     width: 3.25rem;
@@ -259,17 +334,55 @@ box-shadow: 2px 2px 5px black;
 
 
 .datosArtista{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: repeat(4, 15.625rem);
+    grid-template-rows: 18.75rem 18.75rem;
+    grid-template-areas: 
+    "im im . titulo"
+    "im im . info"
+    ;
+    justify-content: center;
+    align-content: center;
 }
 
-.datosArtista section{
-    display: flex;
+.datosArtista h2{
+grid-area: titulo;
+justify-self: center;
+}
 
+.datosArtista img{
+grid-area: im;
+width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.datosArtista p{
+grid-area: info;
 }
 
 
 .bx{
     font-size: 1.875rem;
 }
+
+
+
+ .medio{
+    display: flex;
+    background-color:rgba(157, 178, 191, 1);
+    width: 100%;
+    height: 25rem;
+    overflow: scroll;
+    align-items: center;
+    margin: 5% 0px 5% 0px;} 
+
+
+
+
+
+
+
