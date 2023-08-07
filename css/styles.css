@@ -23,7 +23,7 @@
     width: 100%;
     height: 100vh;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 8.3125rem 2fr 6.25rem ;
+    grid-template-rows: 1fr 2fr 6.25rem ;
     grid-template-areas: 
     "header header header"
     "main main main"
@@ -32,8 +32,9 @@
 }
 
 body{
-    background-color: rgba(217, 217, 217, 1);
+    background-color: white;      
 }
+
 
 header{
     grid-area: header;
@@ -48,115 +49,37 @@ footer{
 .inicio{
     width: 100%;
     height: 40.25rem;
-    background-image: url(https://images.unsplash.com/photo-1610045944237-b06313ab8cb7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80);
+    background-image: url(https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
+    
 }
 
 
-
-footer{
-    background-color:rgba(82, 109, 130, 1) ;
-padding: 3%;
-width: 100%;
-
-}
-
-footer section{
-    display: flex;
-    gap: 1.875rem;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-/* bases */
-
- 
-nav{
-    position: sticky;
-    top: 0px;
-    width: 100%;
+nav {
     background-color: rgba(156, 171, 193, 0.5);
     box-shadow: 2px 0px 10px black;
-    }
+}
 
 
-h1{
-    color:rgba(39, 55, 77, 1) ;
-    font-size: 500%;
-    margin-left: 2%;
-font-style: oblique;
-} 
 
-
+h1 {
+    font-weight: bold;
+    color: rgba(39, 55, 77, 1);
+    font-size: 3.75rem;
+    font-style: oblique;
+}
 
 a{
     text-decoration: none;
 }
 
-button{
-    width: 3.125rem;
-    height: 1.25rem;
-}
-
-ul{
-    display: flex;
-    gap: 1.25rem;
-    justify-content: end;
-}
-
-li{
-    
-    list-style: none;
-    
-}
-
-/* generales */
 
 .centro{
 width: 100%;
 height: 31.25rem;
 }
-
-
-/* .galeria{
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(3, 25%);
-    grid-template-rows: 200px 200px 200px;
-    grid-template-areas: 
-    "im1 im2 im3"
-    "im1 im2 im3"
-    "im4 im4 im4"
-    ;
-    justify-content: center;
-}
-
-.galeria div{
-    width: 100%;
-    height: 100%;
-}
-.galeria div img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.im1 {
-    grid-area: im1;
-}
-.im2 {
-    grid-area: im2 ;
-}
-.im3 {
-    grid-area: im3;
-}
-.im4 {
-    grid-area: im4;
-} */
 
 
 .medio img{
@@ -168,10 +91,20 @@ height: 31.25rem;
 
 
 
+ .medio{
+    display: flex;
+    background-color:rgba(157, 178, 191, 1);
+    width: 100%;
+    height: 25rem;
+    overflow: scroll;
+    align-items: center;
+    margin: 5% 0px 5% 0px;} 
+
 .medio2{
     background-color: rgba(82, 109, 130, 1);
-margin-bottom: 12.5rem;
+margin-bottom: 6.25rem;
 padding: 5%;
+width: 100%;
 }
 
 .medio2 img{
@@ -182,7 +115,7 @@ padding: 5%;
 box-shadow: 2px 2px 5px black;
 }
 
-/* medio/main de index */
+
 
 .primerObras{
     display: flex;
@@ -215,7 +148,7 @@ box-shadow: 2px 2px 5px black;
     left: 40%;
 }
 
-/*obras*/
+
 
 .artistas img{
     width: 6.25rem;
@@ -225,7 +158,7 @@ box-shadow: 2px 2px 5px black;
 
 .artistas{
     padding: 2%;
-    margin: 2%;
+    margin: 1%;
     background-color: rgba(39, 55, 77, 1);
 }
 
@@ -233,6 +166,15 @@ box-shadow: 2px 2px 5px black;
     color: rgba(157, 178, 191, 1);
 }
 
+.artistasIm{
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+}
+
+.espacioArtistas{
+    margin: 2% ;
+}
 
 
 .ayud{
@@ -261,7 +203,15 @@ box-shadow: 2px 2px 5px black;
 .barra ul{
     display: flex;
     justify-content: start;
-    padding: 1.25rem;
+    background-color: rgba(82, 109, 130, 1);
+    list-style: none ;
+    gap: 1.25rem;
+    padding: .625rem;
+}
+
+.barra{
+    width: 100%;
+    height: 3.125rem;
     background-color: rgba(82, 109, 130, 1);
 }
 
@@ -366,23 +316,183 @@ grid-area: info;
 
 
 .bx{
-    font-size: 1.875rem;
+    font-size: 1.25rem;
+}
+
+.obraUno {
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+.obraUno img {
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0.3125rem 0.3125rem 0.625rem gray;
+}
+
+.obraUno h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+.obraUno p {
+    text-align: center;
 }
 
 
 
- .medio{
-    display: flex;
-    background-color:rgba(157, 178, 191, 1);
+.botonColor{
+    background-color:  rgba(39, 55, 77, 1);
+    width: 6.25rem;
+    height: 3.125rem;
+    border-radius: 1.875rem;
+    color: aliceblue;
+}
+
+.botonColor:hover{
+    background-color: rgba(82, 109, 130, 1);
+}
+
+.espacioArtista {
+    margin-top: 1.25rem;
+}
+
+.imagenCompra img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+
+
+.medioObra img {
     width: 100%;
-    height: 25rem;
-    overflow: scroll;
+    max-height: 20.75rem;
+    object-fit: cover;
+    margin: 0.625rem 0.3125rem;
+    box-shadow: 0.3125rem 0.3125rem 0.625rem gray;
+}
+
+.medioObra {
+    width: 100%;
+    background-color: rgba(157, 178, 191, 1);
+    padding: 1.25rem;
+    margin: 5%;
+}
+
+
+
+footer {
+    width: 100%;
+    background-color: rgba(82, 109, 130, 1);
+    padding: 3%;
+}
+
+footer h2 {
+    display: inline;
+    color:  rgba(217, 217, 217, 1);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color:   rgba(217, 217, 217, 1);
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+
+footer section{
+    display: flex;
     align-items: center;
-    margin: 5% 0px 5% 0px;} 
+    justify-content: space-between;
+}
+
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+    grid-template-rows: repeat(5,6.25rem);
+    grid-template-areas: 
+    "div1 div2 div3 div3"
+    "div1 div2 div3 div3"
+    "div1 div4 div4 div8"
+    "div5 div5 div5 div8"
+    "div6 div7 div7 div8"
+    ;
+    justify-content: center;
+    gap: 1.25rem;
+    margin: 3.75rem;
+}
+
+.galeria div{
+width: 100%;
+height: 100%;
+}
+
+.galeria div img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+
+.div1{
+    grid-area: div1;
+}
+.div2{
+    grid-area: div2;
+}
+.div3{
+    grid-area: div3;
+}
+.div4{
+    grid-area: div4;
+}
+
+.div5{
+    grid-area: div5;
+}
+.div6{
+    grid-area: div6;
+}
+.div7{
+    grid-area: div7;
+}
+.div8{
+    grid-area: div8;
+}
+
+
+.linea{
+    border: none;
+    background-color:rgba(200, 210, 224, 0.699) ;
+    height: 1.875rem;
+    justify-self: center ;
+    align-self: center;
+}
+
+.linea:focus{
+    text-decoration: none;
+    box-shadow: none;
+    background-color: rgba(200, 210, 224, 0.925);
+}
 
 
 
+.card-img-overlay {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    }
 
-
-
-
+.card-img-overlay h2{
+    background-color: rgba(200, 210, 224, 0.541);
+    padding: 1.25rem;
+    width: 37.5rem;
+    height: 12.5rem;
+    font-size:x-large;
+}

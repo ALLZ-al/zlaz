@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,17 +15,53 @@
 <body>
     <div class="grid-pages">
     <header>
-        <nav>
-            <h1>Zlaz!</h1>
-            <ul>
-                <li> <i class='bx bx-search-alt-2'></i></li>
-                <li> <a href="../index.html">inicio</a></li>
-                <li><a href="artistas.html">artistas</a></li>
-                <li><a href="obras.html">obras</a></li>
-                <li><a href="registro.html">cuenta</a></li>
-                <li><a href="#"><i class='bx bxs-shopping-bags'></i></a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <h1>Zlaz!</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        
+                        <form class="d-flex" role="search">
+                            <button class="btn" type="button" id="searchButton"><i class='bx bx-search-alt'></i></button>
+                            <div class="esconde d-none">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            </div>
+                        </form>
+        
+        
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="artistas.html">Artistas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="obras.html">Obras</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Cuenta
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
+                                <li><a class="dropdown-item" href="#">Registrarse</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+        
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
+    
     </header>
     <main>
 
