@@ -14,17 +14,48 @@
 </head>
 <body>
     <div class="grid-pages">
-    <header>
-        <nav>
-            <h1>Zlaz!</h1>
-            <ul>
-                <li> <i class='bx bx-search-alt-2'></i></li>
-                <li> <a href="../index.html">inicio</a></li>
-                <li><a href="../pages/artistas.html">artistas</a></li>
-                <li><a href="../pages/obras.html">obras</a></li>
-                <li><a href="../pages/registro.html">cuenta</a></li>
-                <li><a href="../pages/carrito.html"><i class='bx bxs-shopping-bags'></i></a></li>
-            </ul>
+    <header class="resto">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <h1>Zlaz!</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        
+                        <form class="d-flex" role="search">
+                            <div class="input-group input-group-sm mb-3">
+                                <input type="text" class="form-control linea" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" >
+                                <button class="btn btn-sm" type="submit" id="button-addon2"><i class='bx bx-search-alt'></i></button>
+                              </div>
+                          </form>
+        
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/artistas.html">Artistas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/obras.html">Obras</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Cuenta
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
+                                <li><a class="dropdown-item" href="#">Registrarse</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <main>
