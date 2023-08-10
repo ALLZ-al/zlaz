@@ -114,36 +114,30 @@ box-shadow: 2px 2px 5px rgb(180, 167, 167);
 
 
 .primerObras{
-    display: flex;
     justify-content: center;
-
-}
-
-.primerObras article{
-    position: relative;
-        margin: 5% 2%;
+    align-items:center ;
 }
 
 .primerObras img{
-    width: 15.625rem;
-    border: .625rem solid rgb(44, 41, 25);
-    box-shadow: 0px 0px 15px rgba(39, 55, 77, 1);
+    box-shadow: 0px 2px 5px rgba(39, 55, 77, 1);
 }
+
+.tamaño{
+    width: 15.625rem;
+    height: 21.875rem; 
+    margin: 1.25rem;
+}
+
+.tamaño img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .primerObras img:hover{
-    width: 15.625rem;
-    border: .625rem solid rgb(44, 41, 25);
-    box-shadow: 5px 5px 10px rgb(237, 238, 157);
+    box-shadow: 3px 3px 6px rgb(148, 241, 226);
 }
-
-
-.primerObras p{
-    background-color: rgb(183, 209, 209);
-    position: absolute;
-    bottom: 2%;
-    left: 40%;
-}
-
 
 
 .artistas img{
@@ -168,17 +162,14 @@ box-shadow: 2px 2px 5px rgb(180, 167, 167);
     border-radius: 50%;
 }
 
-.espacioArtistas{
-    margin: 2% ;
-}
-
 
 .ayud{
     display: inline;
 }
 
+
 .ayu{
-    background-color: rgba(39, 55, 77, 1);
+    background-color: rgba(82, 109, 130, 0.705);
     height: 40rem;
     margin: 3.125rem 1.25rem ;
     padding: 10% 5%;
@@ -196,37 +187,38 @@ box-shadow: 2px 2px 5px rgb(180, 167, 167);
 
 
 
-.barra ul{
-    display: flex;
-    justify-content: start;
-    list-style: none ;
-    gap: 1.25rem;
-    padding: .625rem;
-    color: antiquewhite;
-}
-
 .barra{
     width: 100%;
     height: 3.125rem;
     background-color: rgba(82, 109, 130, 0.705);
 }
 
+.barra .btn{
+    font-weight: 700;
+    margin: 10px 2rem;
+    color: rgb(214, 219, 226);
+    border: none;
+}
 
+.dropdown-item:focus{
+    background-color: rgba(82, 109, 130, 0.705);
+}
 
 .acercaDe{
-    background-color: rgba(39, 55, 77, 1);
-    height: 50rem;
+    background-color: rgba(82, 109, 130, 0.705);
+    height: auto;
     margin: 3.125rem 1.25rem ;
-    padding: 10% 5%;
+    padding: 6.25rem 3.125rem;
 }
 
 .acercaDe h2{
-    color: rgba(217, 217, 217, 1);
+    color:rgba(39, 55, 77, 1);
     font-size: 4.5rem;
+    font-weight: bold;
 }
 
 .acercaDe p{
-    color: rgba(217, 217, 217, 1);
+    color: rgba(39, 55, 77, 1);
     font-size: 1.75rem;
 }
 
@@ -409,13 +401,14 @@ footer section{
 .galeria{
     display: grid;
     grid-template-columns: repeat(4,25%);
-    grid-template-rows: repeat(5,6.25rem);
+    grid-template-rows: repeat(6,6.25rem);
     grid-template-areas: 
     "div1 div2 div3 div3"
     "div1 div2 div3 div3"
-    "div1 div4 div4 div8"
-    "div5 div5 div5 div8"
-    "div6 div7 div7 div8"
+    "div1 div4 div6 div8"
+    "div5 div4 div6 div8"
+    "div5 div4 div7 div7"
+    "div5 div4 div7 div7"
     ;
     justify-content: center;
     gap: 1.25rem;
@@ -498,4 +491,91 @@ object-fit: cover;
     width: 12.5rem;
     border: none;
     margin-top: 1.25rem;
+    background-color:rgba(39, 55, 77, 1) ;
+    border-radius: 1.25rem;
+    color: aliceblue;
+}
+
+.botonArtistas:active{
+    background-color: rgba(157, 178, 191, 1);
+}
+
+.botonArtistas:hover{
+    color: rgba(157, 178, 191, 1);
+}
+
+
+.formularios{
+    display: flex;
+    justify-content: center;
+}
+
+.formularios form{
+    height: 31.25rem;
+    width: 100%;
+    padding: 1.25rem;
+    margin: 6.25rem 3.125rem;
+    background-color: rgba(82, 109, 130, 0.774);
+    border: 1.25rem solid rgba(39, 55, 77, 1);
+}
+
+.registrarse{
+    display: flex;
+    flex-direction: column;
+ justify-content: center;
+ border-radius: 6.25rem 0rem;
+}
+
+.registrarse h2{
+    text-align: end;
+}
+
+.registrarse button{
+    align-self: center;
+    background-color:rgba(39, 55, 77, 1) ;
+    border: none;
+    border-radius: 50% 0rem;
+}
+
+.acceder{
+    display: flex;
+    flex-direction: column;
+ justify-content: center;
+    border-radius: 0rem 6.25rem;
+}
+
+.acceder button{
+    align-self: center;
+    background-color:rgba(39, 55, 77, 1) ;
+    border: none;
+    border-radius: 0rem 50%;
+}
+
+
+.tamañoDos{
+    position: relative;
+    width: 15.625rem;
+    height: 21.875rem; 
+    margin: 1.25rem;
+}
+
+.tamañoDos img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 725px) {
+    .galeria {
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(6, 6.25rem);
+        grid-template-areas: 
+            "div1 div2"
+            "div1 div3"
+            "div4 div4"
+            "div5 div6"
+            "div5 div7"
+            "div8 div8";
+    }
 }
