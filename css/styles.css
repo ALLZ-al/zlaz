@@ -280,11 +280,11 @@ box-shadow: 2px 2px 5px rgb(180, 167, 167);
     display: grid;
     width: 100%;
     height: 100vh;
-    grid-template-columns: repeat(4, 15.625rem);
-    grid-template-rows: 18.75rem 18.75rem;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,18.75rem);
     grid-template-areas: 
-    "im im . titulo"
-    "im im . info"
+    "im titulo"
+    "im info"
     ;
     justify-content: center;
     align-content: center;
@@ -293,18 +293,26 @@ box-shadow: 2px 2px 5px rgb(180, 167, 167);
 .datosArtista h2{
 grid-area: titulo;
 justify-self: center;
+align-self: center;
 }
 
 .datosArtista img{
 grid-area: im;
 width: 100%;
-    height: 100%;
-    object-fit: cover;
+height: 100%;
+object-fit: cover;
+}
+
+.agarraImagen{
+    width: 25rem;
+    height: 400px;
+    justify-self: center;
 
 }
 
 .datosArtista p{
 grid-area: info;
+justify-self: center;
 }
 
 
@@ -563,6 +571,43 @@ object-fit: cover;
     font-size: 1.25rem;
 }
 
+.grid-art img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.grid-art div{
+    width: 18.75rem;
+    height: 25rem;
+    
+}
+
+.grid-art{
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: repeat(4,18.75rem);
+    grid-template-rows: 25rem;
+    grid-template-areas: 
+    "im1 im2 im3 im4"
+    ;
+    justify-content: space-evenly;
+}
+
+.im1 {
+    grid-area: im1;
+}
+.im2 {
+    grid-area: im2;
+}
+.im3 {
+    grid-area: im3;
+}
+.im4 {
+    grid-area: im4;
+}
 
 
 
@@ -587,6 +632,16 @@ object-fit: cover;
         .registrarse,
         .acceder {
             width: 48%; 
+        }
+
+        .grid-art div{
+            width: 15.625rem;
+            height: 18.75rem;
+
+        }
+
+        .grid-art{
+            justify-content: space-between;
         }
 }
 
@@ -638,7 +693,39 @@ object-fit: cover;
     grid-template-rows: auto auto auto;
 }
 
+.formularios{
+    display: flex;
+    flex-direction: column;
+    width: 21.875rem;
 }
+.datosArtista{
+    grid-template-columns: 31.25rem;
+    grid-template-rows: 25rem 6.25rem 6.25rem;
+    grid-template-areas:
+    "im"
+    "titulo"
+    "info" ;
+}
+
+
+.grid-art{
+    grid-template-columns: repeat(2,18.75rem);
+    grid-template-rows: repeat(2,25rem);
+    grid-template-areas: 
+    "im1 im2"
+    "im3 im4"
+    ;
+    justify-content: center;
+}
+
+.grid-art div{
+    width: 18.75rem;
+    height: 21.875rem;
+}
+
+}
+
+
 
 
 
@@ -682,7 +769,40 @@ object-fit: cover;
 
 }
 
+.formularios{
+    width: 15.625rem;
+}
 
+.datosArtista{
+    grid-template-columns: 15.625rem;
+    grid-template-rows: 18.75rem 6.25rem 6.25rem;
+    grid-template-areas:
+    "im"
+    "titulo"
+    "info" ;
+}
+
+
+.agarraImagen{
+    width: 15.625rem;
+    height: 18.75rem;
+
+}
+
+.grid-art{
+    grid-template-columns: repeat(2,9.375rem);
+    grid-template-rows: repeat(2,18.75rem);
+    grid-template-areas: 
+    "im1 im2"
+    "im3 im4";
+    justify-content: center;
+}
+
+.grid-art div{
+    width: 7.5rem;
+    height: 12.5rem;
+    
+}
 }
 
 
