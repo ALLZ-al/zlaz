@@ -281,44 +281,33 @@ box-shadow: 2px 2px 5px rgb(180, 167, 167);
 
 }
 
-
 .datosArtista{
     display: grid;
     width: 100%;
-    height: 100vh;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,18.75rem);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
     grid-template-areas: 
-    "im titulo"
     "im info"
     ;
-    justify-content: center;
-    align-content: center;
+    margin: 3.125rem 0rem;
 }
 
-.datosArtista h2{
-grid-area: titulo;
-justify-self: center;
-align-self: center;
-}
 
 .datosArtista img{
 grid-area: im;
 width: 100%;
-height: 100%;
+height: 31.25rem;
 object-fit: cover;
 }
 
-.agarraImagen{
-    width: 25rem;
-    height: 400px;
-    justify-self: center;
 
-}
-
-.datosArtista p{
-grid-area: info;
-justify-self: center;
+.colorInfo{
+    grid-area: info;
+    color: rgba(39, 55, 77, 1);
+    background-color: rgba(157, 178, 191, 1);
+    text-align: end;
+    font-size: 1.25rem;
+    padding-right: .625rem;
 }
 
 
@@ -605,13 +594,13 @@ object-fit: cover;
 .grid-art{
     display: grid;
     width: 100%;
-    height: 100vh;
     grid-template-columns: repeat(4,18.75rem);
     grid-template-rows: 25rem;
     grid-template-areas: 
     "im1 im2 im3 im4"
     ;
     justify-content: space-evenly;
+    margin: 1.25rem 0rem;
 }
 
 .im1 {
@@ -641,6 +630,8 @@ object-fit: cover;
     
 }
 
+
+
 @media (max-width: 1024px){
     .mensaje h2 {
         font-size: 2.5rem;
@@ -664,26 +655,20 @@ object-fit: cover;
             width: 48%; 
         }
 
-        .grid-art div{
-            width: 15.625rem;
-            height: 18.75rem;}
+        
+.grid-art{
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 1rem; 
+}
 
-        .grid-art {
-            justify-content: space-between;
-        }        
-        /* .card {
-            height: 9.375rem;
-            margin: 1.25rem;
-        }
-        
-        .card img {
-            width: 100%;
-            height: 9.375rem;
-        }
-        
-        .botonArtistas {
-            width: 6.25rem;
-        }  */
+.grid-art div{
+    width: 100%;
+    height: 100%;
+}
+     
+    
+
 
 }
 
@@ -740,6 +725,8 @@ object-fit: cover;
     flex-direction: column;
     width: 21.875rem;
 }
+
+
 .datosArtista{
     grid-template-columns: 31.25rem;
     grid-template-rows: 25rem 6.25rem 6.25rem;
@@ -772,6 +759,40 @@ object-fit: cover;
 }
 
 
+
+.grid-art{
+    grid-template-columns: repeat(2, 18.75rem);
+    grid-template-rows: auto;
+    gap: 1rem; 
+}
+
+.grid-art div{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.datosArtista{
+    grid-template-columns: 37.5rem;
+    grid-template-rows: 37.5rem 18.75rem;
+    grid-template-areas: 
+    "im"
+    "info"
+    ;
+    justify-content: center;
+}
+
+.colorInfo{
+    text-align: center;
+}
+
+.datosArtista img{
+height: 37.5rem;
+}
+
+
 }
 
 @media (max-width: 425px){
@@ -780,6 +801,38 @@ object-fit: cover;
     width: 100%;
     height: 100%;
     border-radius: 0%;
+}
+
+
+.grid-art{
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 1rem; 
+}
+
+.grid-art div{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.datosArtista{
+    grid-template-columns: 21.875rem;
+    grid-template-rows: 31.25rem 18.75rem;
+    grid-template-areas: 
+    "im"
+    "info"
+    ;
+    justify-content: center;
+}
+
+.colorInfo{
+    text-align: center;
+}
+
+.datosArtista img{
+height: 37.5rem;
 }
 
 }
@@ -832,35 +885,15 @@ object-fit: cover;
     width: 15.625rem;
 }
 
-.datosArtista{
-    grid-template-columns: 15.625rem;
-    grid-template-rows: 18.75rem 6.25rem 6.25rem;
-    grid-template-areas:
-    "im"
-    "titulo"
-    "info" ;
-}
-
-
-.agarraImagen{
-    width: 15.625rem;
-    height: 18.75rem;
-
-}
-
 .grid-art{
-    grid-template-columns: repeat(2,9.375rem);
-    grid-template-rows: repeat(2,18.75rem);
-    grid-template-areas: 
-    "im1 im2"
-    "im3 im4";
-    justify-content: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 1rem; 
 }
 
 .grid-art div{
-    width: 7.5rem;
-    height: 12.5rem;
-    
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -868,6 +901,28 @@ object-fit: cover;
     width: 100%;
     height: 100%;
     border-radius: 0%;
+}
+
+
+.datosArtista{
+    grid-template-columns: 18.75rem;
+    grid-template-rows: 25rem 18.75rem;
+    grid-template-areas: 
+    "im"
+    "info"
+    ;
+    justify-content: center;
+}
+
+
+.datosArtista img{
+height: 25rem;
+}
+
+
+.colorInfo{
+    text-align: center;
+    font-size: 1rem;
 }
 
 
