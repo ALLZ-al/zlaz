@@ -1,0 +1,114 @@
+
+@media (max-width: 425px){
+    .galeria{
+        @include grid(repeat(2, 50%), repeat(6, 6.25rem), none, none,
+        "div1 div2"
+        "div1 div3"
+        "div4 div6"
+        "div5 div6"
+        "div5 div7"
+        "div8 div7"
+        );
+        margin: 1.25rem;
+}
+
+    .inicio{
+        height: 21.875rem;
+        section{
+            div{
+                h2{
+                font-size: 1.25rem;
+            }
+            p{
+                font-size: 1rem;
+            }
+            }
+        }
+    }
+    .card img{
+        width: 100%;
+        height: 100%;
+        border-radius: 0%;
+    }
+    
+
+
+    .grid-art{
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "im1 im2"
+        "im3 im4";
+        margin: .625rem; 
+        div{
+        width: 100%;
+        height: 100%;
+    }
+    }
+    
+    .datosArtista{
+        grid-template-columns: auto;
+        grid-template-rows: 25rem 18.75rem;
+        grid-template-areas: 
+        "im"
+        "info"
+        ;
+        justify-content: center;
+        img{
+        height: 25rem;
+        }
+    .colorInfo{
+        text-align: center;
+        font-size: 1rem;
+    }
+    }
+    
+
+
+
+    
+    .grid-obras{
+        grid-template-columns: repeat(2, 50%);
+        grid-template-areas:
+        "o1 o2"
+        "o3 o4"
+        "o5 o6"
+        "o7 o8"
+        "o9 o10"
+        "o11 o12"
+        ;
+        div{
+            height: 85%;
+        }
+    }
+
+    
+    .acercaDe{
+        margin: 1rem 0rem;
+        height: 37.5rem;
+        h2{
+            font-size: 2.1875rem;
+        }
+        p{
+            font-size: 1.125rem;
+        }
+    }
+
+    
+    .animaTodo{
+        height: 31.25rem;
+        background-size: contain;
+        margin-top: 6.25rem;
+        .errorContainer{
+            margin-bottom: 3.125rem;
+            gap: 12.5rem;
+            div{
+                p{
+                font-size: 1.25rem;
+            }
+            }
+        }
+    }
+    }
+    
+    

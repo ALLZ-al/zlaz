@@ -1,0 +1,21 @@
+footer {
+    width: 100%;
+    background-color: $color-medio;
+    padding: 3%;
+    section{
+        @include flex(none, space-between);
+        align-items: center;
+        gap: 1.25rem;
+        h2{
+            display: inline;
+            color:  $color-contraste;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        a{
+            color: $color-contraste;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+    }
+}

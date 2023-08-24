@@ -1,0 +1,64 @@
+
+@media (max-width: 1024px){
+    .inicio{
+        height: 31.25rem;
+        section{
+            div{
+                h2{
+                font-size: 2.5rem;
+            }
+            p{
+                font-size: 1.875rem;
+            }
+            }
+        }
+    }
+    .tamaño{
+        height: 15.625rem;
+        width: 12.5rem;
+        }
+    .formularios {
+        display: flex;
+        justify-content: space-between;
+        .registrarse,
+        .acceder {
+            width: 48%; 
+        }
+        }
+    .grid-art{
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        gap: 1rem;
+        div{
+            width: 100%;
+            height: 100%;
+        }
+        }
+
+        .grid-obras{
+            grid-template-columns:repeat(4,auto) ;
+            grid-template-areas:
+            "o1 o2 o3 o4"
+            "o5 o6 o7 o8"
+            "o9 o10 o11 o12"
+            ;
+        }
+
+        .acercaDe{
+            margin: 1rem 2rem;
+            h2{
+                font-size: 2.5rem;
+            }
+            p{
+                font-size: 1.875rem;
+            }
+        }
+
+        .animaTodo{
+            height: 37.5rem;
+            margin-top: 3.125rem;
+            .errorContainer{
+                gap: 25rem;
+            }
+        }
+}

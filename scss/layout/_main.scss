@@ -1,0 +1,371 @@
+.h1Inicio{
+    margin-top: 1.25rem;
+}
+.galeria {
+    @include grid(repeat(4, 25%), repeat(6, 6.25rem), center, 1.25rem,
+        "div1 div2 div3 div3"
+        "div1 div2 div3 div3"
+        "div1 div4 div6 div8"
+        "div5 div4 div6 div8"
+        "div5 div4 div7 div7"
+        "div5 div4 div7 div7"
+    );
+    margin: 1rem 3.75rem 3.75rem;
+    div {
+        width: 100%;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            &:hover{
+                transform: scale(1.03,1.03);
+                transition: all 1s;
+            }
+        }
+        &.div1 { grid-area: div1; }
+        &.div2 { grid-area: div2; }
+        &.div3 { grid-area: div3; }
+        &.div4 { grid-area: div4; }
+        &.div5 { grid-area: div5; }
+        &.div6 { grid-area: div6; }
+        &.div7 { grid-area: div7; }
+        &.div8 { grid-area: div8; }
+    }
+}
+
+.medio2{
+    background-color: $color-medio;
+    margin-bottom: 6.25rem;
+    padding: 5%;
+    width: 100%;
+    img{
+        width: 6.25rem;
+        height: 6.25rem;
+        margin: 5%;
+        box-shadow: 2px 2px 5px black;
+        border-radius: 50%;
+        object-fit: cover;
+        &:hover{
+            transform: scale(0.99,0.99);
+            transition: all 0.2s;
+            box-shadow: 0px 0px 5px $color-contraste;
+        }
+    }    
+}
+.tituloA{
+    font-style: italic;
+    font-size: 1.25rem;
+    }  
+
+.card {
+    position: relative;
+    height: 12.5rem;
+    margin: 1.25rem;
+    border-radius: 150px 0% 200px 0%;
+    overflow: hidden;
+    background-color: $color-medio;
+    .cardSobre{
+        @include flex(column, center);
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        padding: 1rem;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.103);
+        h5{
+            color: $color-contraste;
+        }
+        p{
+            margin-top: 0.5rem;
+        color: $color-contraste;
+        }
+        a{
+            text-decoration: none;
+        }
+        .botonArtistas {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: $color-oscuro;
+            border-radius: 1.25rem;
+            color: $color-contraste;
+            &:hover{
+                background-color: $color-claro;
+                transform: scale(1.4, 1.2);
+                transition: all 0.5s;
+            }
+        }
+    }
+    img{
+        width: 18.75rem;
+        height: 12.5rem;
+        border-radius: 0% 0% 100% 0%;
+        box-shadow: 1px 1px 8px $color-oscuro;
+        object-fit: cover;
+    }
+}
+
+
+
+
+.datosArtista{
+    @include grid (repeat(2, 1fr), 1fr, none, none,
+    "im info");
+    width: 100%;
+    margin: 3.125rem 0rem;
+    img{
+        grid-area: im;
+        width: 100%;
+        height: 31.25rem;
+        object-fit: cover;
+    }
+    .colorInfo{
+        grid-area: info;
+        color: $color-oscuro;
+        background-color: $color-medio;
+        text-align: end;
+        font-size: 1.25rem;
+        padding-right: .625rem;
+    }
+}
+
+.grid-art{
+    @include grid(repeat(4,18.75rem),25rem,space-evenly,none,
+    "im1 im2 im3 im4");
+    margin: 1.25rem 0rem;
+    div{
+        width: 18.75rem;
+        height: 25rem;
+        &.im1{grid-area: im1;}
+        &.im2{grid-area: im2;}
+        &.im3{grid-area: im3;}
+        &.im4{grid-area: im4;}
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+
+
+.acercaDe{
+    background-color: $color-medio;
+    height: 43.75rem;
+    margin: 3.125rem 1.25rem ;
+    padding: 2rem;
+    font-size: 1.1rem;
+    h2{
+        color:$color-oscuro;
+        font-weight: bold;
+        font-size: 5rem;
+    }
+    p{
+        color: $color-oscuro;
+        font-size: 1.875rem;
+    }
+}
+
+
+
+.formularios{
+    @include flex(row, center);
+    form{
+        height: 31.25rem;
+        width: 100%;
+        padding: 1.25rem;
+        margin: 4.25rem 3.125rem;
+        background-color: $color-medio;
+        border: 1.25rem solid $color-oscuro;
+        
+    }
+}
+
+.registrarse{
+            @include flex(column, center);
+            border-radius: 6.25rem 0rem;
+            h2{
+                text-align: end;
+            }
+            button{
+                align-self: center;
+                background-color:$color-oscuro ;
+                border: none;
+                border-radius: 50% 0rem;
+                color: $color-contraste;
+                &:hover{
+                    background-color: $color-medio;
+                }
+            }
+        }
+        .acceder{
+            @extend .registrarse;
+            border-radius: 0rem 6.25rem;
+            button{
+                border-radius: 0rem 50%;
+            }
+        }
+        .h1Cuenta{
+            background-color: $color-medio;
+            padding: 1.25rem;
+        }
+
+
+.grid-obras{
+    @include grid(repeat(4,18.75rem), auto, center, none,
+    "o1 o2 o3 o4"
+    "o5 o6 o7 o8"
+    "o9 o10 o11 o12");
+    align-items: center;
+    div{
+        width: 90%;
+        height: 90%;
+        margin: .625rem;
+        &:hover{
+            transform: scale(0.99,0.99);
+            transition: 0.5s,1s;
+        }
+        &.obra1{grid-area: o1;};
+        &.obra2{grid-area: o2;};
+        &.obra3{grid-area: o3;};
+        &.obra4{grid-area: o4;};
+        &.obra5{grid-area: o5;};
+        &.obra6{grid-area: o6;};
+        &.obra7{grid-area: o7;};
+        &.obra8{grid-area: o8;};
+        &.obra9{grid-area: o9;};
+        &.obra10{grid-area: o10;};
+        &.obra11{grid-area: o11;};
+        &.obra12{grid-area: o12;};
+        img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 2px 5px $color-oscuro;
+        &:hover{
+        box-shadow: 0px 0px .625rem $color-medio;
+        transition: all 1s;
+        }
+    }
+    }
+    
+}
+
+.obraUno {
+    
+    margin: 2rem;
+    div{
+        img {
+        width: 100%;
+        object-fit: cover;
+        box-shadow: 0.3125rem 0.3125rem 0.625rem gray;
+    }}
+    .conteDos {
+        display: flex;
+        flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 1.25rem;
+        div {
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            p {
+                text-align: center;
+            }
+        }
+        .espacioArtista {
+            margin-top: 1.25rem;
+            textarea {
+                padding: 6.25rem;
+                box-shadow: none;
+                border-color: $color-oscuro;
+            }
+            label {
+                font-size: 1.875rem;
+            }
+        }
+        .imagenCompra {
+            img {
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+            }
+        }
+
+    }
+}
+
+
+
+.medioObra {
+    @extend .grid-art;
+    h3{
+        color: $color-contraste;
+    }
+}
+
+
+.masObras{
+    margin: 1.25rem;
+}
+
+
+@keyframes efecto {
+    0% { background-image: url(../assets/img/404/animado.png); }
+    10% { background-image: url(../assets/img/404/animado2.png); }
+    25% { background-image: url(../assets/img/404/animado3.png); }
+    50% { background-image: url(../assets/img/404/animado4.png); }
+    75% { background-image: url(../assets/img/404/animado5.png); }
+    100% { background-image: url(../assets/img/404/animado6.png); }
+}
+
+.animaTodo {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation-name: efecto;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    .errorContainer {
+        @include flex (column, center);
+            gap: 31.25rem;
+            text-align: center;
+        h1 {
+        color: $color-oscuro;
+        margin: 0;
+        }
+        div{
+        p {
+        font-size: 24px;
+        color: $color-oscuro;
+        margin: 20px 0;
+        }
+        button{
+            background-color:$color-oscuro;
+            border-radius: 6.25rem;
+            padding: 1.25rem;
+            border: none;
+            &:hover{
+                background-color: $color-medio;
+            }
+            a{
+        text-decoration: none;
+        color: $color-contraste;
+    }
+        }
+    }
+}
+}
+

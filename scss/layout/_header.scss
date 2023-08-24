@@ -1,0 +1,78 @@
+.inicio{
+    width: 100%;
+    height: 40.25rem;
+    background-image: url(https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0rem .125rem 1.5625rem $color-oscuro;
+    section{
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 0%;
+            div{
+                h2{
+                    font-size: 3.125rem;
+                    color:$color-oscuro;
+                    font-weight: bolder;
+                }
+                p{
+                    font-size: 1.875rem;
+                    color: $color-oscuro;
+                    font-weight: bold;
+                }
+            }
+        }
+}
+
+
+
+.resto{
+    width: 100%;
+    height: auto;
+    background-image: url(https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .barra{
+        width: 100%;
+        height: 3.125rem;
+        background-color: $color-medio;
+        .btn{
+            font-weight: 700;
+        margin: 10px 2rem;
+        color: $color-claro;
+        border: none;
+        }
+        .dropdown-item:focus{
+            background-color: $color-medio;
+        }
+    }
+}
+
+
+nav {
+    background-color: rgba(156, 171, 193, 0.5);
+    box-shadow: 2px 0px 10px $color-oscuro;
+    z-index: 100;
+    text-align: center;
+    li{
+        font-weight: bold;
+    }
+    .linea{
+        border: none;
+        background-color:rgba(200, 210, 224, 0.699) ;
+        height: 1.875rem;
+        justify-self: center ;
+        align-self: center;
+        &:focus{
+        text-decoration: none;
+        box-shadow: none;
+        background-color: rgba(200, 210, 224, 0.925);
+        }
+    }
+}
+
+

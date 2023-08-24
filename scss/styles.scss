@@ -6,6 +6,7 @@
 /*todo respecto a codigo*/
 @import "./base/reset";
 @import "./base/generales";
+@import "./base/typo";
 @import "./layout/header";
 @import "./layout/main";
 @import "./layout/footer";
@@ -14,4 +15,5 @@
 /*mediaQ*/
 @import "./layout/mediaQ/media1024";
 @import "./layout/mediaQ/media768";
+@import "./layout/mediaQ/media425";
 @import "./layout/mediaQ/media320";

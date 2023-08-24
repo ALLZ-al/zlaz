@@ -1,0 +1,121 @@
+
+@media (max-width: 768px) {
+    .galeria {
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(6, 6.25rem);
+        grid-template-areas:
+            "div1 div2"
+            "div1 div3"
+            "div4 div6"
+            "div5 div6"
+            "div5 div7"
+            "div8 div7";
+    }
+    
+        .medio2 {
+            img {
+                height: 3.125rem;
+                width: 3.125rem;
+                margin-top: 5%;
+            }
+        }
+    
+        .inicio{
+            height: 25rem;
+            section{
+                div{
+                    h2{
+                    font-size: 1.875rem;
+                }
+                p{
+                    font-size: 1.25rem;
+                }
+                }
+            }
+        }
+    
+        .tamaño {
+            width: 9.375rem;
+            height: 6.25rem;
+            margin: .125rem;
+        }
+    
+        .imagenCompra {
+            img {
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            }
+        }
+    
+    .acercaDe{
+        margin: 1rem 1rem;
+        height: auto;
+        h2{
+            font-size: 2.5rem;
+        }
+        p{
+            font-size: 1.5625rem;
+        }
+    }
+    
+        .grid-pages {
+            grid-template-rows: auto auto auto;
+        }
+    
+        .formularios {
+            display: flex;
+            flex-direction: column;
+            width: 21.875rem;
+        }
+
+        .card {
+            img {
+            width: 18.75rem;
+            }
+        }
+    
+    
+    .grid-art{
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "im1 im2"
+        "im3 im4"
+        ;
+        margin: .625rem; 
+        div{
+        width: 100%;
+        height: 100%;
+    }
+    }
+    .datosArtista{
+        img{
+        height: 25rem;
+        }
+    .colorInfo{
+        text-align: center;
+        font-size: 1rem;
+    }
+    }
+
+        .grid-obras{
+            grid-template-columns: repeat(3, 30%);
+            grid-template-areas:
+            "o1 o2 o3"
+            "o4 o5 o6"
+            "o7 o8 o9"
+            "o10 o11 o12"
+            ;
+        }
+
+        .animaTodo{
+            height: 37.5rem;
+            background-size: contain;
+            margin-top: 6.25rem;
+            .errorContainer{
+                gap: 21.875rem;
+            }
+        }
+
+    }

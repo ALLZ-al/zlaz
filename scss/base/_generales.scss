@@ -1,0 +1,20 @@
+.grid-pages {
+    @include grid(repeat(3, 1fr), auto auto auto, none, none,
+    "header header header"
+    "main main main"
+    "footer footer footer");
+    height: 100vh;
+    }
+    header{
+    grid-area: header;
+    }
+    main{
+    grid-area: main;
+    }
+    footer{
+    grid-area: footer;
+    }
+
+.bx{
+    font-size: 1.25rem;
+}
