@@ -33,7 +33,7 @@
 }
 
 .h1Inicio{
-    margin-top: 1.25rem;
+    @extend .h1Cuenta;
 }
 
 .tituloA{

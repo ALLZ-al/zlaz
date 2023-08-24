@@ -126,9 +126,6 @@ nav {
     .galeria div.div8 {
       grid-area: div8; }
 
-.h1Inicio {
-  margin-top: 1.25rem; }
-
 .tituloA {
   font-style: italic;
   font-size: 1.25rem; }
@@ -360,7 +357,7 @@ nav {
   .acceder button {
     border-radius: 0rem 50%; }
 
-.h1Cuenta {
+.h1Cuenta, .h1Inicio {
   background-color: rgba(97, 124, 145, 0.89);
   padding: 1.25rem; }
 
