@@ -3,7 +3,7 @@ footer {
     background-color: $color-medio;
     padding: 3%;
     section{
-        @include flex(none, space-between);
+        @include flex(none, space-between, none);
         align-items: center;
         gap: 1.25rem;
         h2{

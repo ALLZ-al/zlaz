@@ -62,12 +62,7 @@
         .grid-pages {
             grid-template-rows: auto auto auto;
         }
-    
-        .formularios {
-            display: flex;
-            flex-direction: column;
-            width: 21.875rem;
-        }
+
 
         .card {
             img {
@@ -117,5 +112,13 @@
                 gap: 21.875rem;
             }
         }
+
+        .formularios {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+                width: 85%;
+                margin: 2.5rem 1.5rem;
+            }
 
     }

@@ -1,0 +1,51 @@
+
+.card {
+    position: relative;
+    height: 12.5rem;
+    margin: 1.25rem;
+    border-radius: 150px 0% 200px 0%;
+    overflow: hidden;
+    background-color: $color-medio;
+    .cardSobre{
+        @include flex(column, center, center);
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        padding: 1rem;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.103);
+        h5{
+            color: $color-contraste;
+        }
+        p{
+            margin-top: 0.5rem;
+        color: $color-contraste;
+        }
+        a{
+            text-decoration: none;
+        }
+        .botonArtistas {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: $color-oscuro;
+            border-radius: 1.25rem;
+            color: $color-contraste;
+            &:hover{
+                background-color: $color-claro;
+                transform: scale(1.4, 1.2);
+                transition: all 0.5s;
+            }
+        }
+    }
+    img{
+        width: 18.75rem;
+        height: 12.5rem;
+        border-radius: 0% 0% 100% 0%;
+        box-shadow: 1px 1px 8px $color-oscuro;
+        object-fit: cover;
+    }
+}
+

@@ -1,0 +1,53 @@
+
+@keyframes efecto {
+    0% { background-image: url(../assets/img/404/animado.png); }
+    10% { background-image: url(../assets/img/404/animado2.png); }
+    25% { background-image: url(../assets/img/404/animado3.png); }
+    50% { background-image: url(../assets/img/404/animado4.png); }
+    75% { background-image: url(../assets/img/404/animado5.png); }
+    100% { background-image: url(../assets/img/404/animado6.png); }
+}
+
+.animaTodo {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation-name: efecto;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    .errorContainer {
+        @include flex (column, center,none);
+            gap: 31.25rem;
+            text-align: center;
+        h1 {
+        color: $color-oscuro;
+        margin: 0;
+        }
+        div{
+        p {
+        font-size: 24px;
+        color: $color-oscuro;
+        margin: 20px 0;
+        }
+        button{
+            background-color:$color-oscuro;
+            border-radius: 6.25rem;
+            padding: 1.25rem;
+            border: none;
+            &:hover{
+                background-color: $color-medio;
+            }
+            a{
+        text-decoration: none;
+        color: $color-contraste;
+    }
+        }
+    }
+}
+}

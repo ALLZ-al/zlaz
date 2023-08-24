@@ -1,0 +1,41 @@
+
+.formularios{
+    @include flex(row, space-between,none);
+    form{
+        height: 31.25rem;
+        width: 90%;
+        padding: 1.25rem;
+        margin: 4.25rem 3.125rem;
+        background-color: $color-medio;
+        border: 1.25rem solid $color-oscuro;
+    }
+}
+
+.registrarse{
+            @include flex(column, center,none);
+            border-radius: 6.25rem 0rem;
+            h2{
+                text-align: end;
+            }
+            button{
+                align-self: center;
+                background-color:$color-oscuro ;
+                border: none;
+                border-radius: 50% 0rem;
+                color: $color-contraste;
+                &:hover{
+                    background-color: $color-medio;
+                }
+            }
+        }
+        .acceder{
+            @extend .registrarse;
+            border-radius: 0rem 6.25rem;
+            button{
+                border-radius: 0rem 50%;
+            }
+        }
+        .h1Cuenta{
+            background-color: $color-medio;
+            padding: 1.25rem;
+        }

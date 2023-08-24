@@ -91,9 +91,6 @@ nav {
       box-shadow: none;
       background-color: rgba(200, 210, 224, 0.925); }
 
-.h1Inicio {
-  margin-top: 1.25rem; }
-
 .galeria {
   display: grid;
   grid-template-columns: repeat(4, 25%);
@@ -129,6 +126,13 @@ nav {
     .galeria div.div8 {
       grid-area: div8; }
 
+.h1Inicio {
+  margin-top: 1.25rem; }
+
+.tituloA {
+  font-style: italic;
+  font-size: 1.25rem; }
+
 .medio2 {
   background-color: rgba(97, 124, 145, 0.89);
   margin-bottom: 6.25rem;
@@ -146,10 +150,6 @@ nav {
       transition: all 0.2s;
       box-shadow: 0px 0px 5px aliceblue; }
 
-.tituloA {
-  font-style: italic;
-  font-size: 1.25rem; }
-
 .card {
   position: relative;
   height: 12.5rem;
@@ -161,6 +161,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -216,7 +217,7 @@ nav {
     font-size: 1.25rem;
     padding-right: .625rem; }
 
-.grid-art, .medioObra {
+.grid-art {
   display: grid;
   grid-template-columns: repeat(4, 18.75rem);
   grid-template-rows: 25rem;
@@ -224,72 +225,21 @@ nav {
   gap: none;
   grid-template-areas: "im1 im2 im3 im4";
   margin: 1.25rem 0rem; }
-  .grid-art div, .medioObra div {
+  .grid-art div {
     width: 18.75rem;
     height: 25rem; }
-    .grid-art div.im1, .medioObra div.im1 {
+    .grid-art div.im1 {
       grid-area: im1; }
-    .grid-art div.im2, .medioObra div.im2 {
+    .grid-art div.im2 {
       grid-area: im2; }
-    .grid-art div.im3, .medioObra div.im3 {
+    .grid-art div.im3 {
       grid-area: im3; }
-    .grid-art div.im4, .medioObra div.im4 {
+    .grid-art div.im4 {
       grid-area: im4; }
-    .grid-art div img, .medioObra div img {
+    .grid-art div img {
       width: 100%;
       height: 100%;
       object-fit: cover; }
-
-.acercaDe {
-  background-color: rgba(97, 124, 145, 0.89);
-  height: 43.75rem;
-  margin: 3.125rem 1.25rem;
-  padding: 2rem;
-  font-size: 1.1rem; }
-  .acercaDe h2 {
-    color: #27374d;
-    font-weight: bold;
-    font-size: 5rem; }
-  .acercaDe p {
-    color: #27374d;
-    font-size: 1.875rem; }
-
-.formularios {
-  display: flex;
-  flex-direction: row;
-  justify-content: center; }
-  .formularios form {
-    height: 31.25rem;
-    width: 100%;
-    padding: 1.25rem;
-    margin: 4.25rem 3.125rem;
-    background-color: rgba(97, 124, 145, 0.89);
-    border: 1.25rem solid #27374d; }
-
-.registrarse, .acceder {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 6.25rem 0rem; }
-  .registrarse h2, .acceder h2 {
-    text-align: end; }
-  .registrarse button, .acceder button {
-    align-self: center;
-    background-color: #27374d;
-    border: none;
-    border-radius: 50% 0rem;
-    color: aliceblue; }
-    .registrarse button:hover, .acceder button:hover {
-      background-color: rgba(97, 124, 145, 0.89); }
-
-.acceder {
-  border-radius: 0rem 6.25rem; }
-  .acceder button {
-    border-radius: 0rem 50%; }
-
-.h1Cuenta {
-  background-color: rgba(97, 124, 145, 0.89);
-  padding: 1.25rem; }
 
 .grid-obras {
   display: grid;
@@ -340,40 +290,79 @@ nav {
         transition: all 1s; }
 
 .obraUno {
+  display: flex;
   margin: 2rem; }
-  .obraUno div img {
+  .obraUno img {
     width: 100%;
     object-fit: cover;
     box-shadow: 0.3125rem 0.3125rem 0.625rem gray; }
   .obraUno .conteDos {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
     gap: 1.25rem; }
-    .obraUno .conteDos div h2 {
+    .obraUno .conteDos .tituloObra {
       font-size: 2rem;
       margin-bottom: 1rem; }
-    .obraUno .conteDos div p {
+    .obraUno .conteDos .descripcionObra {
       text-align: center; }
+    .obraUno .conteDos .imagenCompra {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem; }
+      .obraUno .conteDos .imagenCompra img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%; }
+      .obraUno .conteDos .imagenCompra .nombreArtista {
+        font-size: 1.2rem; }
     .obraUno .conteDos .espacioArtista {
       margin-top: 1.25rem; }
-      .obraUno .conteDos .espacioArtista textarea {
-        padding: 6.25rem;
+      .obraUno .conteDos .espacioArtista .comentarios textarea {
+        padding: 1rem;
         box-shadow: none;
         border-color: #27374d; }
-      .obraUno .conteDos .espacioArtista label {
-        font-size: 1.875rem; }
-    .obraUno .conteDos .imagenCompra img {
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 50%; }
-
-.medioObra h3 {
-  color: aliceblue; }
 
 .masObras {
   margin: 1.25rem; }
+
+.formularios {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: none; }
+  .formularios form {
+    height: 31.25rem;
+    width: 90%;
+    padding: 1.25rem;
+    margin: 4.25rem 3.125rem;
+    background-color: rgba(97, 124, 145, 0.89);
+    border: 1.25rem solid #27374d; }
+
+.registrarse, .acceder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: none;
+  border-radius: 6.25rem 0rem; }
+  .registrarse h2, .acceder h2 {
+    text-align: end; }
+  .registrarse button, .acceder button {
+    align-self: center;
+    background-color: #27374d;
+    border: none;
+    border-radius: 50% 0rem;
+    color: aliceblue; }
+    .registrarse button:hover, .acceder button:hover {
+      background-color: rgba(97, 124, 145, 0.89); }
+
+.acceder {
+  border-radius: 0rem 6.25rem; }
+  .acceder button {
+    border-radius: 0rem 50%; }
+
+.h1Cuenta {
+  background-color: rgba(97, 124, 145, 0.89);
+  padding: 1.25rem; }
 
 @keyframes efecto {
   0% {
@@ -406,6 +395,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: none;
     gap: 31.25rem;
     text-align: center; }
     .animaTodo .errorContainer h1 {
@@ -426,6 +416,20 @@ nav {
         text-decoration: none;
         color: aliceblue; }
 
+.acercaDe {
+  background-color: rgba(97, 124, 145, 0.89);
+  height: 43.75rem;
+  margin: 3.125rem 1.25rem;
+  padding: 2rem;
+  font-size: 1.1rem; }
+  .acercaDe h2 {
+    color: #27374d;
+    font-weight: bold;
+    font-size: 5rem; }
+  .acercaDe p {
+    color: #27374d;
+    font-size: 1.875rem; }
+
 footer {
   width: 100%;
   background-color: rgba(97, 124, 145, 0.89);
@@ -434,6 +438,7 @@ footer {
     display: flex;
     flex-direction: none;
     justify-content: space-between;
+    align-content: none;
     align-items: center;
     gap: 1.25rem; }
     footer section h2 {
@@ -457,17 +462,11 @@ footer {
   .tamaño {
     height: 15.625rem;
     width: 12.5rem; }
-  .formularios {
-    display: flex;
-    justify-content: space-between; }
-    .formularios .registrarse, .formularios .acceder,
-    .formularios .acceder {
-      width: 48%; }
-  .grid-art, .medioObra {
+  .grid-art {
     grid-template-columns: auto;
     grid-template-rows: auto;
     gap: 1rem; }
-    .grid-art div, .medioObra div {
+    .grid-art div {
       width: 100%;
       height: 100%; }
   .grid-obras {
@@ -517,18 +516,14 @@ footer {
       font-size: 1.5625rem; }
   .grid-pages {
     grid-template-rows: auto auto auto; }
-  .formularios {
-    display: flex;
-    flex-direction: column;
-    width: 21.875rem; }
   .card img {
     width: 18.75rem; }
-  .grid-art, .medioObra {
+  .grid-art {
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: "im1 im2" "im3 im4";
     margin: .625rem; }
-    .grid-art div, .medioObra div {
+    .grid-art div {
       width: 100%;
       height: 100%; }
   .datosArtista img {
@@ -544,7 +539,13 @@ footer {
     background-size: contain;
     margin-top: 6.25rem; }
     .animaTodo .errorContainer {
-      gap: 21.875rem; } }
+      gap: 21.875rem; }
+  .formularios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    margin: 2.5rem 1.5rem; } }
 
 @media (max-width: 425px) {
   .galeria {
@@ -565,12 +566,12 @@ footer {
     width: 100%;
     height: 100%;
     border-radius: 0%; }
-  .grid-art, .medioObra {
+  .grid-art {
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: "im1 im2" "im3 im4";
     margin: .625rem; }
-    .grid-art div, .medioObra div {
+    .grid-art div {
       width: 100%;
       height: 100%; }
   .datosArtista {
@@ -603,7 +604,13 @@ footer {
       margin-bottom: 3.125rem;
       gap: 12.5rem; }
       .animaTodo .errorContainer div p {
-        font-size: 1.25rem; } }
+        font-size: 1.25rem; }
+  .formularios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    margin: 2rem 1rem; } }
 
 @media (max-width: 320px) {
   .inicio {
@@ -624,11 +631,10 @@ footer {
       width: 1.25rem; }
   .formularios {
     flex-direction: column;
-    align-items: center; }
-    .formularios form {
-      width: 100%;
-      padding: 1.25rem;
-      margin: 0rem; }
+    align-items: center;
+    width: 100%;
+    margin: 0rem;
+    padding: 0rem; }
   .card img {
     width: 100%;
     height: 100%;
@@ -649,15 +655,6 @@ footer {
       font-size: 1.875rem; }
     .acercaDe p {
       font-size: 1rem; }
-  .obraUno {
-    margin: 2rem; }
-    .obraUno div h2 {
-      font-size: 2rem; }
-  .espacioArtista {
-    margin-top: 1.25rem; }
-  .imagenCompra img {
-    width: 2.5rem;
-    height: 2.5rem; }
   .medioObra {
     display: grid;
     grid-template-columns: repeat 2, 50%;

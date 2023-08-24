@@ -1,0 +1,17 @@
+
+.acercaDe{
+    background-color: $color-medio;
+    height: 43.75rem;
+    margin: 3.125rem 1.25rem ;
+    padding: 2rem;
+    font-size: 1.1rem;
+    h2{
+        color:$color-oscuro;
+        font-weight: bold;
+        font-size: 5rem;
+    }
+    p{
+        color: $color-oscuro;
+        font-size: 1.875rem;
+    }
+}

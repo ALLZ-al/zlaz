@@ -1,0 +1,48 @@
+.obraUno {
+    display: flex;
+    margin: 2rem;
+    img {
+        width: 100%;
+        object-fit: cover;
+        box-shadow: 0.3125rem 0.3125rem 0.625rem gray;
+    }
+    .conteDos {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        .tituloObra {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .descripcionObra {
+            text-align: center;
+        }
+        .imagenCompra {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            img {
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+            }
+            .nombreArtista {
+                font-size: 1.2rem;
+            }
+        }
+        .espacioArtista {
+            margin-top: 1.25rem;
+            .comentarios {
+                textarea {
+                    padding: 1rem;
+                    box-shadow: none;
+                    border-color: $color-oscuro;
+                }
+            }
+        }
+    }
+}
+
+.masObras{
+    margin: 1.25rem;
+}

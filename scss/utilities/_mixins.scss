@@ -7,8 +7,9 @@
     grid-template-areas: $area;
 }
 
-@mixin flex($dir,$justify){
+@mixin flex($dir,$justify,$align){
     display: flex;
     flex-direction: $dir;
-    justify-content: $justify;   
+    justify-content: $justify;
+    align-content: $align;   
 }

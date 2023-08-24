@@ -38,14 +38,11 @@
 
     .formularios {
         flex-direction: column;
-        align-items: center; 
-        form {
+        align-items: center;
         width: 100%;
-        padding: 1.25rem;
         margin: 0rem;
+        padding: 0rem;
         }
-    }  
-    
 
     .card {
         img{
@@ -90,24 +87,6 @@
     }
 
 
-    .obraUno {
-        margin: 2rem;
-        div{
-            h2{
-                font-size: 2rem;
-            }
-        }
-    }
-    .espacioArtista {
-        margin-top: 1.25rem;
-    }
-    .imagenCompra{
-        img{
-            width: 2.5rem;
-            height: 2.5rem;
-        }
-    }
-
     .medioObra {
         @include grid (repeat (2,50%), auto, none,none,
         "obra1 obra2"
@@ -140,8 +119,5 @@
         }
         }
         
-        
     }
-
-    }
-    
+}
