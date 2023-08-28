@@ -120,6 +120,28 @@
         width: 95%;
         margin: 2rem 1rem;
         }
+
+        .obraUno {
+            div {
+                .row {
+                    flex-direction: column;
+                    .col {
+                        width: 100%;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .conteDos {
+                        margin-top: 1rem; 
+                        .imagenCompra {
+                            margin-top: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+
     }
     
     
