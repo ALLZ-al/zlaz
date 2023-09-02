@@ -105,15 +105,18 @@
 
     
 .animaTodo {
-    margin: 0rem;
+    margin-top: 3.75rem;
+    margin-bottom: 4.375rem;
     .errorContainer {
         h1{
             font-size: 1.25rem;
-            margin: 1.25rem;
+            margin: 0rem;
         }
         img{
-        height: 12.5rem;
+        height: 14.375rem;
         width: 100%;
+        margin-top: .625rem;
+        margin-bottom: .625rem;
         }
         div{
         p {
@@ -123,6 +126,7 @@
         button{
             padding: .625rem;
             border: none;
+            margin-top: 1.25rem;
         }
     }
 }
