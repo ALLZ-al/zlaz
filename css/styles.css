@@ -54,6 +54,14 @@ footer {
       color: #27374d;
       font-weight: bold; }
 
+.otro {
+  width: 100%;
+  height: auto;
+  background-image: url(https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
 .resto {
   width: 100%;
   height: auto;
@@ -68,7 +76,7 @@ footer {
     .resto .barra .btn {
       font-weight: 700;
       margin: 10px 2rem;
-      color: #8aa0ad;
+      color: #27374d;
       border: none; }
     .resto .barra .dropdown-item:focus {
       background-color: rgba(97, 124, 145, 0.89); }
@@ -125,6 +133,11 @@ nav {
       grid-area: div7; }
     .galeria div.div8 {
       grid-area: div8; }
+
+.h1Inicio {
+  color: aliceblue;
+  font-weight: bold;
+  letter-spacing: 1.25rem; }
 
 .tituloA {
   font-style: italic;
@@ -377,28 +390,25 @@ nav {
     background-image: url(../assets/img/404/animado6.png); } }
 
 .animaTodo {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-name: efecto;
-  animation-iteration-count: infinite;
-  animation-duration: 2s; }
+  margin: 1.25rem; }
   .animaTodo .errorContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: none;
-    gap: 31.25rem;
     text-align: center; }
     .animaTodo .errorContainer h1 {
       color: #27374d;
       margin: 0; }
+    .animaTodo .errorContainer img {
+      height: 31.25rem;
+      width: 100%;
+      animation-name: efecto;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation-iteration-count: infinite;
+      animation-duration: 2s; }
     .animaTodo .errorContainer div p {
       font-size: 24px;
       color: #27374d;
@@ -475,12 +485,7 @@ footer {
     .acercaDe h2 {
       font-size: 2.5rem; }
     .acercaDe p {
-      font-size: 1.875rem; }
-  .animaTodo {
-    height: 37.5rem;
-    margin-top: 3.125rem; }
-    .animaTodo .errorContainer {
-      gap: 25rem; } }
+      font-size: 1.875rem; } }
 
 @media (max-width: 768px) {
   .galeria {
@@ -530,12 +535,9 @@ footer {
   .grid-obras {
     grid-template-columns: repeat(3, 30%);
     grid-template-areas: "o1 o2 o3" "o4 o5 o6" "o7 o8 o9" "o10 o11 o12"; }
-  .animaTodo {
-    height: 37.5rem;
-    background-size: contain;
-    margin-top: 6.25rem; }
-    .animaTodo .errorContainer {
-      gap: 21.875rem; }
+  .animaTodo .errorContainer img {
+    height: 21.875rem;
+    width: 100%; }
   .formularios {
     display: flex;
     flex-direction: column;
@@ -603,15 +605,11 @@ footer {
       font-size: 2.1875rem; }
     .acercaDe p {
       font-size: 1.125rem; }
-  .animaTodo {
-    height: 31.25rem;
-    background-size: contain;
-    margin-top: 6.25rem; }
-    .animaTodo .errorContainer {
-      margin-bottom: 3.125rem;
-      gap: 12.5rem; }
-      .animaTodo .errorContainer div p {
-        font-size: 1.25rem; }
+  .animaTodo .errorContainer img {
+    height: 15.625rem;
+    width: 100%; }
+  .animaTodo .errorContainer div p {
+    font-size: 20px; }
   .formularios {
     display: flex;
     flex-direction: column;
@@ -693,13 +691,16 @@ footer {
     .medioObra img {
       margin: 0rem; }
   .animaTodo {
-    height: 25rem;
-    background-size: contain;
-    padding-top: 1.25rem;
-    margin-top: 6.25rem; }
-    .animaTodo .errorContainer {
-      gap: 12.5rem; }
-      .animaTodo .errorContainer h1 {
-        font-size: 1.25rem; }
-      .animaTodo .errorContainer div p {
-        font-size: 1rem; } }
+    margin: 0rem; }
+    .animaTodo .errorContainer h1 {
+      font-size: 1.25rem;
+      margin: 1.25rem; }
+    .animaTodo .errorContainer img {
+      height: 12.5rem;
+      width: 100%; }
+    .animaTodo .errorContainer div p {
+      font-size: 16px;
+      margin: 1rem; }
+    .animaTodo .errorContainer div button {
+      padding: .625rem;
+      border: none; } }

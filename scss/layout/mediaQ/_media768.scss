@@ -101,14 +101,16 @@
             ;
         }
 
-        .animaTodo{
-            height: 37.5rem;
-            background-size: contain;
-            margin-top: 6.25rem;
-            .errorContainer{
-                gap: 21.875rem;
-            }
+        .animaTodo {
+            .errorContainer {
+                img{
+                height: 21.875rem;
+                width: 100%;
+                }
         }
+        }
+
+
 
         .formularios {
             display: flex;
