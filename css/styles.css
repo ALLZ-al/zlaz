@@ -99,6 +99,11 @@ nav {
       box-shadow: none;
       background-color: rgba(200, 210, 224, 0.925); }
 
+.logo {
+  margin-left: 1.25rem;
+  font-size: 3.125rem;
+  color: #27374d; }
+
 .galeria {
   display: grid;
   grid-template-columns: repeat(4, 25%);
@@ -222,10 +227,10 @@ nav {
   .datosArtista .colorInfo {
     grid-area: info;
     color: #27374d;
-    background-color: rgba(97, 124, 145, 0.89);
     text-align: end;
     font-size: 1.25rem;
-    padding-right: .625rem; }
+    padding-right: .625rem;
+    background: linear-gradient(50deg, #27374d 0%, rgba(138, 160, 173, 0) 100%); }
 
 .grid-art {
   display: grid;
@@ -238,6 +243,9 @@ nav {
   .grid-art div {
     width: 18.75rem;
     height: 25rem; }
+    .grid-art div:hover {
+      transform: scale(0.99, 0.99);
+      transition: 0.5s,1s; }
     .grid-art div.im1 {
       grid-area: im1; }
     .grid-art div.im2 {
@@ -247,9 +255,13 @@ nav {
     .grid-art div.im4 {
       grid-area: im4; }
     .grid-art div img {
+      object-fit: cover;
       width: 100%;
       height: 100%;
-      object-fit: cover; }
+      box-shadow: 0px 2px 5px #27374d; }
+      .grid-art div img:hover {
+        box-shadow: 0px 0px 0.625rem rgba(97, 124, 145, 0.89);
+        transition: all 1s; }
 
 .grid-obras {
   display: grid;
@@ -299,9 +311,28 @@ nav {
         box-shadow: 0px 0px 0.625rem rgba(97, 124, 145, 0.89);
         transition: all 1s; }
 
+.iconoObra {
+  position: relative;
+  display: inline-block; }
+  .iconoObra .overlay {
+    position: absolute;
+    height: 15%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease; }
+    .iconoObra .overlay:hover {
+      opacity: 1; }
+    .iconoObra .overlay i {
+      width: 100px;
+      height: 100px;
+      color: aliceblue; }
+
 .masObras {
   margin: 1.25rem;
-  color: #27374d; }
+  color: #27374d;
+  font-weight: bolder; }
 
 .obraUno {
   display: flex;
@@ -313,12 +344,17 @@ nav {
   .obraUno div .row .conteDos {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem; }
+    gap: 1.25rem;
+    background: linear-gradient(180deg, #27374d 0%, rgba(138, 160, 173, 0) 100%);
+    border-radius: 0rem  0rem 0rem; }
     .obraUno div .row .conteDos h2 {
       font-size: 2rem;
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      color: aliceblue;
+      margin-top: 1rem; }
     .obraUno div .row .conteDos p {
-      text-align: center; }
+      text-align: center;
+      color: aliceblue; }
     .obraUno div .row .conteDos .imagenCompra {
       display: flex;
       align-items: center;
@@ -334,7 +370,11 @@ nav {
     .obraUno div .row .espacioArtista .comentarios textarea {
       padding: 1rem;
       box-shadow: none;
-      border-color: #27374d; }
+      border: none;
+      color: aliceblue;
+      background-color: #27374d; }
+      .obraUno div .row .espacioArtista .comentarios textarea::placeholder {
+        color: rgba(97, 124, 145, 0.89); }
 
 .formularios {
   display: flex;
@@ -544,17 +584,21 @@ footer {
     align-items: center;
     width: 85%;
     margin: 2.5rem 1.5rem; }
-  .obraUno div .row {
-    flex-direction: column; }
-    .obraUno div .row .col {
-      width: 100%; }
-      .obraUno div .row .col img {
-        width: 25rem;
-        height: 31.25rem; }
-    .obraUno div .row .conteDos {
-      margin-top: 1rem; }
-      .obraUno div .row .conteDos .imagenCompra {
-        margin-top: 1rem; } }
+  .obraUno {
+    width: 100vw;
+    margin: 0rem; }
+    .obraUno div .row {
+      flex-direction: column; }
+      .obraUno div .row .col {
+        width: 100%; }
+        .obraUno div .row .col img {
+          width: 25rem;
+          height: 31.25rem; }
+      .obraUno div .row .conteDos {
+        width: 100%;
+        margin-top: 1rem; }
+        .obraUno div .row .conteDos .imagenCompra {
+          margin-top: 1rem; } }
 
 @media (max-width: 425px) {
   .galeria {
@@ -600,13 +644,13 @@ footer {
       height: 85%; }
   .acercaDe {
     margin-top: 2rem;
-    height: 37.5rem; }
+    height: 40.625rem; }
     .acercaDe h2 {
       font-size: 2.1875rem; }
     .acercaDe p {
       font-size: 1.125rem; }
   .animaTodo {
-    margin-top: 3.125rem;
+    margin-top: 3.75rem;
     margin-bottom: 3.125rem; }
     .animaTodo .errorContainer h1 {
       font-size: 1.25rem;

@@ -122,6 +122,8 @@
 
 
             .obraUno {
+                width: 100vw;
+                margin: 0rem;
                 div {
                     .row {
                         flex-direction: column;
@@ -133,6 +135,7 @@
                             }
                         }
                         .conteDos {
+                            width: 100%;
                             margin-top: 1rem; 
                             .imagenCompra {
                                 margin-top: 1rem;
