@@ -266,7 +266,7 @@ nav {
 .grid-obras {
   display: grid;
   grid-template-columns: repeat(4, 18.75rem);
-  grid-template-rows: auto;
+  grid-template-rows: repeat(3, 25rem);
   justify-content: center;
   gap: none;
   grid-template-areas: "o1 o2 o3 o4" "o5 o6 o7 o8" "o9 o10 o11 o12";
@@ -314,9 +314,24 @@ nav {
 .iconoObra {
   position: relative;
   display: inline-block; }
+  .iconoObra .enlaceTitulo {
+    position: absolute;
+    font-size: 3.125rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    color: aliceblue;
+    text-decoration: none;
+    z-index: 1;
+    opacity: 0; }
+    .iconoObra .enlaceTitulo:hover {
+      opacity: 1; }
   .iconoObra .overlay {
     position: absolute;
-    height: 15%;
+    height: 100%;
     width: 100%;
     top: 0;
     left: 0;
@@ -519,6 +534,7 @@ footer {
       height: 100%; }
   .grid-obras {
     grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(3, 25rem);
     grid-template-areas: "o1 o2 o3 o4" "o5 o6 o7 o8" "o9 o10 o11 o12"; }
   .acercaDe {
     margin: 1rem 2rem; }
@@ -573,7 +589,8 @@ footer {
     text-align: center;
     font-size: 1rem; }
   .grid-obras {
-    grid-template-columns: repeat(3, 30%);
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, 18.75rem);
     grid-template-areas: "o1 o2 o3" "o4 o5 o6" "o7 o8 o9" "o10 o11 o12"; }
   .animaTodo .errorContainer img {
     height: 21.875rem;
@@ -639,6 +656,7 @@ footer {
       font-size: 1rem; }
   .grid-obras {
     grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(6, 18.75rem);
     grid-template-areas: "o1 o2" "o3 o4" "o5 o6" "o7 o8" "o9 o10" "o11 o12"; }
     .grid-obras div {
       height: 85%; }
@@ -719,6 +737,7 @@ footer {
       height: 25rem; }
   .grid-obras {
     grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(6, 15.625rem);
     grid-template-areas: "o1 o2" "o3 o4" "o5 o6" "o7 o8" "o9 o10" "o11 o12"; }
     .grid-obras div {
       height: 80%; }

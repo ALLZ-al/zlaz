@@ -63,6 +63,7 @@
     
     .grid-obras{
         grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(6, 15.625rem);
         grid-template-areas:
         "o1 o2"
         "o3 o4"
