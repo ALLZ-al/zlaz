@@ -325,7 +325,7 @@ nav {
   .iconoObra .enlaceTitulo {
     position: absolute;
     font-size: 3.125rem;
-    top: 0;
+    top: 25%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -749,6 +749,8 @@ footer {
     grid-template-areas: "o1 o2" "o3 o4" "o5 o6" "o7 o8" "o9 o10" "o11 o12"; }
     .grid-obras div {
       height: 80%; }
+  .iconoObra .enlaceTitulo {
+    font-size: 1.25rem; }
   .acercaDe {
     height: 34.375rem; }
     .acercaDe h2 {
