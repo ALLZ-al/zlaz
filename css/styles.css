@@ -693,6 +693,8 @@ footer {
       padding: .625rem;
       border: none;
       margin-top: 1.25rem; }
+  .iconoObra .enlaceTitulo {
+    font-size: 1.25rem; }
   .formularios {
     display: flex;
     flex-direction: column;
