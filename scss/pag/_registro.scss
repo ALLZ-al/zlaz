@@ -33,6 +33,10 @@
             border-radius: 0rem 6.25rem;
             button{
                 border-radius: 0rem 50%;
+                a{
+                    text-decoration: none;
+                    color: $color-contraste;
+                }
             }
         }
         .h1Cuenta{

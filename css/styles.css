@@ -173,6 +173,10 @@ nav {
       transition: all 0.2s;
       box-shadow: 0px 0px 5px aliceblue; }
 
+.galeriaAbajo {
+  width: 100%;
+  height: auto; }
+
 .card {
   position: relative;
   height: 12.5rem;
@@ -433,10 +437,34 @@ nav {
   border-radius: 0rem 6.25rem; }
   .acceder button {
     border-radius: 0rem 50%; }
+    .acceder button a {
+      text-decoration: none;
+      color: aliceblue; }
 
 .h1Cuenta, .h1Inicio {
   background-color: rgba(97, 124, 145, 0.89);
   padding: 1.25rem; }
+
+.miRegistro {
+  height: auto;
+  background: linear-gradient(rgba(97, 124, 145, 0.89), #8aa0ad);
+  margin: 1.25rem 3.125rem; }
+  .miRegistro .divUser {
+    display: flex;
+    flex-direction: none;
+    justify-content: center;
+    align-content: center; }
+    .miRegistro .divUser img {
+      border-radius: 50%;
+      width: 18.75rem;
+      height: 18.75rem;
+      margin: 2%; }
+  .miRegistro .datosUser {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+    margin-top: 10%; }
 
 @keyframes efecto {
   0% {
