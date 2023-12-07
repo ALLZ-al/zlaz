@@ -64,16 +64,9 @@
     .grid-obras{
         grid-template-columns: repeat(2, 50%);
         grid-template-rows: repeat(6, 15.625rem);
-        grid-template-areas:
-        "o1 o2"
-        "o3 o4"
-        "o5 o6"
-        "o7 o8"
-        "o9 o10"
-        "o11 o12"
-        ;
         div{
-            height: 80%;
+            height: 100%;
+            padding: 0% 0% 15% 0%;
         }
     }
     .iconoObra{
