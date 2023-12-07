@@ -2,8 +2,8 @@ let carrito = [];
 let carritoStorage = JSON.parse(localStorage.getItem('carrito'));
 
 if (carritoStorage && carritoStorage.length >= 1) {
-  alert("Veni y termina la compra!")
-} 
+  alert("Tienes obras en el carrito");
+}
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -157,7 +157,6 @@ function agregarAlCarrito(nombre, valor) {
   } else {
     carrito.push({ nombre, valor, cantidad: 1 });
   }
-
   
   actualizarListaCarrito();
   guardarCarritoLocalStorage();
@@ -183,7 +182,7 @@ function guardarCarritoLocalStorage() {
 
 function actualizarListaCarrito() {
   const listaCarrito = document.getElementById('listaCarrito');
-  listaCarrito.innerHTML = ''; 
+  listaCarrito.innerHTML = '';
 
   carrito.map((obra, index) => {
     const item = document.createElement('li');

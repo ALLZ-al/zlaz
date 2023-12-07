@@ -287,8 +287,7 @@ nav {
   .grid-obras div {
     width: 100%;
     height: 90%;
-    margin: 7% 2%;
-    padding: 0% 0% 5% 0%; }
+    padding: 0% 0% 6% 0%; }
     .grid-obras div:hover {
       transform: scale(0.99, 0.99);
       transition: 0.5s,1s; }
@@ -296,9 +295,7 @@ nav {
       font-size: 1.25rem; }
 
 .sinBorde {
-  gap: 1.25rem;
-  display: flex;
-  justify-content: center; }
+  border: none; }
 
 .imagenProducto {
   object-fit: cover;
@@ -352,6 +349,21 @@ nav {
 
 .bxs-cart {
   margin-top: .625rem; }
+
+.offcanvas {
+  background: linear-gradient(to right, rgba(97, 124, 145, 0.89), #8aa0ad); }
+  .offcanvas .offcanvas-header {
+    background-color: #27374d; }
+    .offcanvas .offcanvas-header .offcanvas-title {
+      font-size: 1.5625rem;
+      color: aliceblue; }
+  .offcanvas .offcanvas-body .list-group-item {
+    background-color: aliceblue;
+    border: none;
+    border-radius: 200px 0% 200px 0%;
+    margin-top: 1.25rem;
+    color: #27374d;
+    font-weight: bold; }
 
 .masObras {
   margin: 1.25rem;
