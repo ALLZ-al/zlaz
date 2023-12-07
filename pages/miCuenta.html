@@ -69,22 +69,61 @@
                 <div class="divUser">
                     <img src="../assets/img/artistas/artista7.jpeg" alt="">
                 </div>
-                <div>
-                    <p>
-                        momentaneamente sin nada pero se quieren agregar datos del usuario y 2 secciones con guardados y me gusta
-                    </p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis cumque similique maiores nesciunt quaerat fugiat provident fuga excepturi possimus dolor dolorem dicta illum eum magnam dignissimos reprehenderit quam, sed ipsum.</p>
-                </div>
-
-                <div class="datosUser">
-                    <div>
-                        <p>me gusta</p>
-                    </div>
-                    <div>guardado</div>
-                </div>
-
+                <div id="listaLikes" class="mt-4">
+                    <h2>Obras que Me Gustan</h2>
+                    <ul class="list-group">
+                      <!-- Las obras que le gustan al usuario se mostrarán aquí -->
+                    </ul>
+                  </div>
+              
             </section>
         
+
+
+
+
+
+
+
+            <input type="text" id="buscadorProducto" placeholder="Buscar producto...">
+
+            <div id="contenedorProductos" class="d-flex flex-wrap"></div>
+            
+          
+            <div class="modal fade" id="carritoModal" tabindex="-1" role="dialog" aria-labelledby="carritoModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="carritoModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <ul id="listaCarrito" class="list-group">
+                      <!-- Los productos agregados al carrito aparecerán aquí -->
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Finalizar Compra</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
         </main>
     <footer>
         <section>
@@ -99,8 +138,9 @@
         </section>
     </footer>
 </div>
-<script src="../js/app.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+<script src="../js/app.js"></script>
 </body>
 </html>

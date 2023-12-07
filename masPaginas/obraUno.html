@@ -51,6 +51,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../pages/registro.html">Cuenta</a>
                         </li>
+                        <li>
+                            <i class='bx bxs-cart' data-bs-toggle="modal" data-bs-target="#carritoModal"></i>
+                          </li>
                     </ul>
                 </div>
             </div>
@@ -67,12 +70,13 @@
                         <img src="../assets/img/arteallz2.jpeg" class="img-fluid" alt="Primer_obra">
                     </div>
                     <div class="col conteDos">
-                        <h2>Reflejos de un Joven Corazón</h2>
+                        <h2 id="nombreDeLaObra">Reflejos de un Joven Corazón</h2>
                         <p>Mi obra no tiene un significado fijo, ya que el arte debe permitir que cada persona le dé su propia interpretación. Sin embargo, en ella, exploré la percepción de la juventud contemporánea. La figura central, influenciada por el amante de Leonardo da Vinci, se encuentra en un escenario caótico con simbolismos de presiones, desafíos y emociones intensas. Mi objetivo es provocar una reflexión sobre cómo vemos y entendemos a la juventud actual.</p>
                         <div class="imagenCompra">
                             <a href="../artistas/artistaUno.html"><img src="../assets/img/artistas/artista7.jpeg" alt=""></a>
-                            <span class="nombreArtista">Allz</span>
+                            <span class="nombreArtista" id="artistaDeLaObra">Allz</span>
                             <i class='bx bx-bookmark-heart logi'></i>
+                            <button class="btn btn-primary" onclick="agregarAlCarrito('Reflejos de un Joven Corazón', 1000)">Agregar al Carrito</button>
                         </div>
                         <div class="espacioArtista">
                             <div class="comentarios">
@@ -86,13 +90,14 @@
 
     </section>
     <h2 class="masObras">Sugerencias</h2>
-    <section class="grid-art">
-        <div class="im1"><a href="../pages/error.html"><img src="../assets/img/arteallz.jpeg" alt="mas obras"></a></div>
-        <div class="im2"><a href="../masPaginas/obraTres.html"><img src="../assets/img/artelov.jpg" alt="mas obras"></a></div>
-        <div class="im3"><a href="../masPaginas/obracuatro.html"><img src="../assets/img/artecha.jpeg" alt="mas obras"></a></div>
-        <div class="im4"><a href="../pages/error.html"><img src="../assets/img/artek.jpeg" alt="mas obras"></a></div>
+   
+<section class="galeriaAbajo grid-art">
+    <div class="im1"></div>
+    <div class="im2"></div>
+    <div class="im3"></div>
+    <div class="im4"></div>
     </section>
-
+    
 
     </main>
     <footer>
@@ -114,5 +119,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
         integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
         crossorigin="anonymous"></script>
+    <script src="../js/app.js"></script>
 </body>
 </html>

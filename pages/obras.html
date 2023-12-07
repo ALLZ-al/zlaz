@@ -37,7 +37,7 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <form class="d-flex" role="search">
                         <div class="input-group input-group-sm mb-3">
-                            <input type="text" class="form-control linea" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" >
+                            <input type="text" id="buscadorObras" class="form-control linea" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" >
                             <button class="btn btn-sm" type="submit" id="button-addon2"><i class='bx bx-search-alt'></i></button>
                           </div>
                       </form>
@@ -53,6 +53,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="registro.html">Cuenta</a>
                     </li>
+                    <li>
+                      <i class='bx bxs-cart'id="carritoBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></i>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -62,7 +65,7 @@
           <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Tipo de arte
           </button>
-          <ul class="dropdown-menu" id="myDropdown">
+          <ul class="dropdown-menu aca" id="myDropdown">
             <li><a class="dropdown-item" href="#">Fotografia</a></li>
             <li><a class="dropdown-item" href="#">Pinturas</a></li>
             <li><a class="dropdown-item" href="#">Esculturas</a></li>
@@ -73,109 +76,27 @@
 </div>
     </header>
 
+    
+
         <main>
-<section class="grid-obras">
-  <div class="obra1 iconoObra">
-      <img src="../assets/img/arteallz2.jpeg" alt="Primer obra, cuadro abstracto"> 
-    <div class="overlay">
-      <i class='bx bx-pencil'></i>
-      <a href="../masPaginas/obraUno.html" class="enlaceTitulo">Reflejos de un Joven Corazón</a>
-    </div>
-  </div>
 
-  <div class="obra2 iconoObra">
-      <img src="../assets/img/arteAaron.jpeg" alt="Segunda obra, dibujo de anime"> 
-    <div class="overlay">
-      <i class='bx bx-pencil'></i>
-      <a href="../masPaginas/obraDos.html" class="enlaceTitulo">Rohan Kishibe</a>
-    </div>
-  </div>
+          <div id="contenedorObras" class="d-flex flex-wrap grid-obras"></div>
+    
+          <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Carrito De Compras</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul id="listaCarrito" class="list-group">
+                
 
-  <div class="obra3 iconoObra">
-      <img src="../assets/img/artelov.jpg" alt="Tercer obra, fotografia de la luna"> 
-    <div class="overlay">
-      <i class='bx bx-camera'></i>
-      <a href="../masPaginas/obraTres.html" class="enlaceTitulo">Moon</a>
-    </div>
-  </div>
-
-  <div class="obra4 iconoObra">
-      <img src="../assets/img/artecha.jpeg" alt="Cuarta obra, fotografia"> 
-    <div class="overlay">
-      <i class='bx bx-camera'></i>
-      <a href="../masPaginas/obracuatro.html" class="enlaceTitulo">MM</a>
-    </div>
-  </div>
-  
-  <div class="obra5 iconoObra">
-      <img src="../assets/img/arteG.jpeg" alt="Quinta obra, fotografia"> 
-    <div class="overlay">
-      <i class='bx bx-camera'></i>
-      <a href="../pages/error.html" class="enlaceTitulo">Heartbreaker</a>
-    </div>
-  </div>
-
-  <div class="obra6 iconoObra">
-      <img src="../assets/img/artek.jpeg" alt="Sexta obra, dibujo de escultura"> 
-    <div class="overlay">
-      <i class='bx bx-pencil'></i>
-      <a href="../pages/error.html" class="enlaceTitulo">La Gracia Inmortal</a>
-    </div>
-  </div>
-
-  <div class="obra7 iconoObra">
-      <img src="../assets/img/artelov4.jpg" alt="Septima obra, fotografia"> 
-    <div class="overlay">
-      <i class='bx bx-camera'></i>
-      <a href="../pages/error.html" class="enlaceTitulo">Luz y Sombra</a>
-    </div>
-  </div>
-
-  <div class="obra8 iconoObra">
-      <img src="../assets/img/arteallz3.jpeg" alt="Octava obra, autoretrato"> 
-    <div class="overlay">
-      <i class='bx bx-pencil'></i>
-      <a href="../pages/error.html" class="enlaceTitulo">Autoretrato</a>
-    </div>
-  </div>
-
-  <div class="obra9 iconoObra">
-      <img src="../assets/img/arteallz4.jpeg" alt="Novena obra, cuadro mano"> 
-    <div class="overlay">
-      <i class='bx bx-brush'></i>
-      <a href="../pages/error.html" class="enlaceTitulo">Destino</a>
-    </div>
-  </div>
-
-  <div class="obra10 iconoObra">
-      <img src="../assets/img/artecam.jpeg" alt="Decima obra, fotografia cielo"> 
-    <div class="overlay">
-      <i class='bx bx-camera'></i>
-      <a href="../pages/error.html" class="enlaceTitulo">Ensueño</a>
-    </div>
-  </div>
-
-  
-  <div class="obra11 iconoObra">
-      <img src="../assets/img/arteallz.jpeg" alt="Undecima obra, cuadro "> 
-    <div class="overlay">
-      <i class='bx bx-pencil'></i>
-      <a href="../pages/error.html" class="enlaceTitulo">Vivir o existir</a>
-    </div>
-  </div>
-
-  <div class="obra12 iconoObra">
-      <img src="../assets/img/artelov2.jpg" alt="Duodecima obra, fotografia"> 
-<div class="overlay">
-      <i class='bx bx-camera'></i>
-      <a href="../pages/error.html" class="enlaceTitulo">Golden Trip</a>
-    </div>
-  </div>
+              </ul>
+            </div>
+          </div>
 
 
 
-
-</section>
         </main>
 
     <footer>
