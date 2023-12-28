@@ -54,15 +54,18 @@
                         <a class="nav-link" href="registro.html">Cuenta</a>
                     </li>
                     <li>
-                      <i class='bx bxs-cart'id="carritoBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></i>
-                    </li>
+                      <div class="numeroCarrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                        <div class="cuentaCarrito">0</div>
+                      <i class='bx bxs-cart carritoBtn' ></i>
+                      </div>
+                      </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="barra">
         <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn dropdown-toggle disabled" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Tipo de arte
           </button>
           <ul class="dropdown-menu aca" id="myDropdown">
@@ -79,7 +82,7 @@
     
 
         <main>
-          <div id="mensajeCarrito"></div>
+          
           <div id="contenedorObras" class="d-flex flex-wrap grid-obras"></div>
     
           <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -92,6 +95,13 @@
                 
 
               </ul>
+              <div id="totalCarrito">
+                
+              </div>
+              <div class="divBotonesCarrito">
+                <button class="botonComprar">Comprar</button>
+                <button class="botonVaciar" id="vaciarCarrito" onclick="vaciarCarrito()">Borrar</button>
+              </div>
             </div>
           </div>
 
@@ -113,6 +123,7 @@
     </footer>
         
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 <script src="../js/app.js"></script>

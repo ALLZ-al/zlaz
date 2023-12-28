@@ -1,0 +1,114 @@
+{
+    "artistas": [
+        {
+        "nombre": "Allz",
+        "tipo": ["pintura"],
+        "img": "../assets/img/artistas/artista7.jpeg",
+        "enlace": "../artistas/artistaUno.html"
+      },
+      {
+        "nombre": "Drazle",
+        "tipo": ["fotografia, pintura"],
+        "img": "../assets/img/artistas/artista1.jpeg",
+        "enlace": "../artistas/artistaDos.html"
+      },
+      {
+        "nombre": "Xyloz",
+        "tipo": ["fotografia"],
+        "img": "../assets/img/artistas/artista8.jpeg",
+        "enlace": "../artistas/artistaTres.html"
+      },
+      {
+        "nombre": "Zephylix",
+        "tipo": ["pintura", "fotografia"],
+        "img": "../assets/img/artistas/artista4.jpeg",
+        "enlace": "../artistas/artistaCuatro.html"
+      }
+    ],
+
+    "obras": [
+    {
+        "nombre": "Reflejos de un Joven Corazón",
+        "valor":"1235", 
+        "tipo": "papel", 
+        "artista": "Allz", 
+        "img":"../assets/img/arteallz2.jpeg", 
+        "enlace": "../masPaginas/obraUno.html" },
+    {
+        "nombre": "Rohan Kishibe",
+        "valor":"1627", 
+        "tipo": "papel", 
+        "artista": "Zephylix", 
+        "img": "../assets/img/arteAaron.jpeg", 
+        "enlace": "../masPaginas/obraDos.html"},
+    {
+        "nombre": "Moon",
+        "valor":"1937", 
+        "tipo": "fotografia", 
+        "artista": "Xyloz", 
+        "img":"../assets/img/artelov.jpg", 
+        "enlace": "../masPaginas/obraTres.html"},
+    {
+        "nombre": "MM",
+        "valor":"1528", 
+        "tipo": "fotografia", 
+        "artista": "Zephyl" , 
+        "img":"../assets/img/artecha.jpeg", 
+        "enlace": "../masPaginas/obraCuatro.html"},
+    {
+        "nombre": "Vivir o existir",
+        "valor":"1828", 
+        "tipo": "pintura", 
+        "artista": "Allz", 
+        "img":"../assets/img/arteallz.jpeg", 
+        "enlace": "../pages/error.html"},
+    {
+        "nombre": "Autoretrato",
+        "valor":"1827", 
+        "tipo": "papel", 
+        "artista": "Allz", 
+        "img":"../assets/img/arteallz3.jpeg", 
+        "enlace": "../pages/error.html"},
+    {
+        "nombre": "Destino",
+        "valor":"1728", 
+        "tipo": "pintura", 
+        "artista": "Allz", 
+        "img": "../assets/img/arteallz4.jpeg", 
+        "enlace": "../pages/error.html"},
+    {
+        "nombre": "Ensueño",
+        "valor":"1163", 
+        "tipo": "fotografia", 
+        "artista": "Drazle", 
+        "img": "../assets/img/artecam.jpeg", 
+        "enlace": "../pages/error.html"},
+    {
+        "nombre": "La gracia inmortal",
+        "valor":"1719", 
+        "tipo": "papel", 
+        "artista": "Drazle", 
+        "img": "../assets/img/artek.jpeg", 
+        "enlace": "../pages/error.html"},
+    {
+        "nombre": "Heartbreaker",
+        "valor":"1927", 
+        "tipo": "fotografia", 
+        "artista": "Zephylix", 
+        "img": "../assets/img/arteG.jpeg", 
+        "enlace": "../pages/error.html"},
+    {
+        "nombre": "Golden trip",
+        "valor":"1492", 
+        "tipo": "fotografia", 
+        "artista": "Xyloz", 
+        "img": "../assets/img/artelov2.jpg", 
+        "enlace": "../pages/error.html"},
+    {
+        "nombre": "Luz y sombra",
+        "valor":"1838", 
+        "tipo": "fotografia", 
+        "artista": "Xyloz", 
+        "img":"../assets/img/artelov4.jpg", 
+        "enlace": "../pages/error.html"}
+]}

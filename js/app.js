@@ -1,153 +1,248 @@
 let carrito = [];
-let carritoStorage = JSON.parse(localStorage.getItem('carrito'));
 
-if (carritoStorage && carritoStorage.length >= 1) {
-  alert("Tienes obras en el carrito");
+function cargarProductosDesdeLocalStorage() {
+  try {
+    const carritoStorage = JSON.parse(localStorage.getItem('carrito'));
+    carrito = carritoStorage || [];
+
+    // Verificar si estamos en la página donde se debe mostrar el offcanvas
+    const mostrarOffcanvas = document.getElementById('listaCarrito') !== null;
+
+    if (mostrarOffcanvas) {
+      actualizarListaCarrito();
+      actualizarContadorCarrito();
+      mostrarTotalCarrito();
+    } else {
+      actualizarContadorCarrito();
+    }
+  } catch (error) {
+    console.error('Error al cargar datos desde localStorage:', error);
+  }
 }
 
+  
 
-document.addEventListener("DOMContentLoaded", function() {
-  const imagenes = [
-      {img:"../assets/img/arteAaron.jpeg", enlace: "../masPaginas/obraDos.html"},
-      {img:"../assets/img/arteAaron2.jpeg", enlace: "../pages/error.html"},
-      {img:"../assets/img/arteallz.jpeg", enlace: "../pages/error.html"},
-      {img:"../assets/img/arteallz2.jpeg", enlace: "../masPaginas/obraUno.html"},
-      {img:"../assets/img/arteallz3.jpeg", enlace: "../pages/error.html"},
-      {img:"../assets/img/arteallz4.jpeg", enlace: "../pages/error.html"},
-      {img:"../assets/img/artecam.jpeg", enlace: "../pages/error.html"},
-      {img:"../assets/img/artecam2.jpeg", enlace: "../pages/error.html"},
-      {img:"../assets/img/artecha.jpeg", enlace: "../masPaginas/obracuatro.html"},
-      {img:"../assets/img/arteG.jpeg", enlace: "../pages/error.html"},
-      {img:"../assets/img/artelov.jpg", enlace: "../masPaginas/obraTres.html"},
-      {img:"../assets/img/artelov2.jpg", enlace: "../pages/error.html"},
-      {img:"../assets/img/artelov3.jpg", enlace: "../pages/error.html"},
-      {img:"../assets/img/artelov4.jpg", enlace: "../pages/error.html"}
-  ];
+  // Función para obtener la información de artistas y obras
+async function obtenerDatos() {
+  try {
+    const response = await fetch('../json/datos.json');
+    if (!response) {
+      throw new Error("Error al cargar el archivo JSON");
+    }
 
-  const galeriaDivs = document.querySelectorAll('.galeriaAbajo > div');
-//sugerencias random en index
-  for (const div of galeriaDivs) {
-      const indiceAleatorio = Math.floor(Math.random() * imagenes.length);
-      const { img, enlace } = imagenes[indiceAleatorio];
-
-      const imgElement = document.createElement("img");
-      imgElement.src = img;
-
-      const enlaceElement = document.createElement("a");
-      enlaceElement.href = enlace;
-      enlaceElement.appendChild(imgElement);
-
-      div.appendChild(enlaceElement);
-
-      imagenes.splice(indiceAleatorio, 1);
+    const datos = await response.json();
+    return datos;
+  } catch (error) {
+    console.error("Error en la app", error);
   }
+}
+
+// Función para mostrar las imágenes en la galería del inicio
+async function mostrarImagenes() {
+  try {
+    const resultado = await obtenerDatos();
+    const obras = resultado.obras;
+
+    const galeriaDivs = document.querySelectorAll('.galeriaAbajo > div');
+
+    for (const div of galeriaDivs) {
+      const indiceAleatorio = Math.floor(Math.random() * obras.length);
+      const { img, enlace } = obras[indiceAleatorio];
+
+      const imgRandom = document.createElement("img");
+      imgRandom.src = img;
+
+      const enlaceImagenRan = document.createElement("a");
+      enlaceImagenRan.href = enlace;
+      enlaceImagenRan.appendChild(imgRandom);
+
+      div.appendChild(enlaceImagenRan);
+
+      obras.splice(indiceAleatorio, 1);
+    }
+  } catch (error) {
+    console.error("Error en la app", error);
+  }
+}
+
+// Función para mostrar las obras y artistas
+async function mostrarObrasYArtistas() {
+  try {
+    const { artistas, obras } = await obtenerDatos();
+    // Lógica para mostrar las obras 
+    const contenedorObras = document.getElementById("contenedorObras");
+    const buscadorObras = document.getElementById("buscadorObras");
+
+    if (contenedorObras && buscadorObras) {
+      function mostrarObras(obrasFiltradas) {
+        contenedorObras.innerHTML = "";
+
+        obrasFiltradas.map((obra) => {
+          const divObra = document.createElement("div");
+          divObra.classList.add("card", "m-2", "sinBorde");
+          divObra.style.width = "18rem";
+          divObra.style.height = "25rem";
+          divObra.innerHTML = `
+              <div class="card-body">
+              <a href="${obra.enlace}"><img src="${obra.img}" class="card-img-top imagenProducto" alt="Imagen de ${obra.artista}"></a>
+                  <div>
+                    <h5 class="card-title">${obra.nombre}</h5>
+                    <p class="card-text">$ ${obra.valor} ARS</p>
+                    <button class="btn btnAgregarCarrito" onclick="agregarAlCarrito('${obra.nombre}', ${obra.valor})">Agregar al Carrito</button>
+                  </div>
+              </div>
+          `;
+          contenedorObras.appendChild(divObra);
+        });
+      }
+
+      function filtrarObras() {
+        const textoBusqueda = buscadorObras.value.toLowerCase();
+        const obrasFiltradas = obras.filter((obra) =>
+          obra.nombre.toLowerCase().includes(textoBusqueda) ||
+          obra.tipo.toLowerCase().includes(textoBusqueda) ||
+          obra.artista.toLowerCase().includes(textoBusqueda)
+        );
+
+        mostrarObras(obrasFiltradas);
+      }
+
+      buscadorObras.addEventListener("input", filtrarObras);
+      mostrarObras(obras);
+    }
+
+    // Lógica para mostrar los artistas 
+    const contenedorArtistas = document.getElementById("contenedorArtistas");
+    const buscadorArtista = document.getElementById("buscadorArtista");
+
+    if (contenedorArtistas && buscadorArtista) {
+      function mostrarArtistas(artistasFiltrados) {
+        contenedorArtistas.innerHTML = "";
+
+        artistasFiltrados.forEach((artista) => {
+          const divArt = document.createElement("div");
+          divArt.innerHTML = `
+              <div class="cardio mb-3">
+              <div class="cardSobre">
+                  <h5 class="card-title">${artista.nombre}</h5>
+                  <p class="card-text">${artista.tipo}</p>
+              <a href="${artista.enlace}" class="botonArtistas">Perfil</a>   
+              </div>
+              <img src="${artista.img}" class="img-fluid" alt="artista ${artista.nombre}">
+              </div>
+          `;
+          contenedorArtistas.appendChild(divArt);
+        });
+      }
+
+      function filtrarArtistas() {
+        const textoBusqueda = buscadorArtista.value.toLowerCase();
+        const artistasFiltrados = artistas.filter((artista) =>
+          artista.nombre.toLowerCase().includes(textoBusqueda) ||
+          artista.tipo.some((tipo) => tipo.toLowerCase().includes(textoBusqueda))
+        );
+
+        mostrarArtistas(artistasFiltrados);
+      }
+
+      buscadorArtista.addEventListener("input", filtrarArtistas);
+      mostrarArtistas(artistas);
+    }
+  } catch (error) {
+    console.error("Error en la app", error);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", async function () {
+  await mostrarImagenes();
+  await mostrarObrasYArtistas();
+  cargarProductosDesdeLocalStorage();
 });
 
+//sección formularios de registro
 
-document.addEventListener("DOMContentLoaded", function () {
-  
-  const obras = [
-     {nombre: "Reflejos de un Joven Corazón", valor:1000, tipo: "papel", artista: "Allz", img: "../assets/img/arteallz2.jpeg", enlace: "../masPaginas/obraUno.html"},
-       {nombre: "Rohan Kishibe", valor:1000, tipo: "papel", artista: "Zephylix", img: "../assets/img/arteAaron.jpeg", enlace: "../masPaginas/obraDos.html"},
-       {nombre: "Moon", valor:1000, tipo: "fotografia", artista: "Xyloz", img: "../assets/img/artelov.jpg", enlace: "../masPaginas/obraTres.html"},
-       {nombre: "MM", valor:1000, tipo: "fotografia", artista: "Zephyl", img: "../assets/img/artecha.jpeg", enlace: "../masPaginas/obracuatro.html"},
-       {nombre: "Heartbreaker", valor:1000, tipo: "fotografia", artista: "Zephylix", img: "../assets/img/arteG.jpeg", enlace: "../pages/error.html"},
-       {nombre: "La gracia inmortal", valor:1000, tipo: "papel", artista: "Drazle", img: "../assets/img/artek.jpeg", enlace: "../pages/error.html"},
-       {nombre: "Luz y sombra", valor:1000, tipo: "fotografia", artista: "Xyloz", img: "../assets/img/artelov4.jpg", enlace: "../pages/error.html"},
-       {nombre: "Autoretrato", valor:1000, tipo: "papel", artista: "Allz", img: "../assets/img/arteallz3.jpeg", enlace: "../pages/error.html"},
-       {nombre: "Destino", valor:1000, tipo: "pintura", artista: "Allz", img: "../assets/img/arteallz4.jpeg", enlace: "../pages/error.html"},
-       {nombre: "Ensueño", valor:1000, tipo: "fotografia", artista: "Drazle", img: "../assets/img/artecam.jpeg", enlace: "../pages/error.html"},
-       {nombre: "Vivir o existir", valor:1000, tipo: "pintura", artista: "Allz", img: "../assets/img/arteallz.jpeg", enlace: "../pages/error.html"},
-       {nombre: "Golden trip", valor:1000, tipo: "fotografia", artista: "Xyloz", img: "../assets/img/artelov2.jpg", enlace: "../pages/error.html"}
-    
-     ];
-      
-  const artistas = [
-   { nombre: "Allz", tipo: ["pintura", "papel"], enlace: "../artistas/artistaUno.html", img: "../assets/img/artistas/artista7.jpeg" },
-     { nombre: "Drazle", tipo: ["fotografia", "papel"], enlace: "../artistas/artistaDos.html", img: "../assets/img/artistas/artista1.jpeg"  },
-     { nombre: "Xyloz", tipo: ["fotografia"], enlace: "../artistas/artistaTres.html", img: "../assets/img/artistas/artista4.jpeg"  },
-     { nombre: "Zephylix", tipo: ["fotografia", "papel"], enlace: "../artistas/artistaCuatro.html", img: "../assets/img/artistas/artista8.jpeg"  }
-     
-  ];
+function registroUsuario() {
+  const email = document.getElementById('exampleInputEmail1').value;
+  const contra = document.getElementById('exampleInputPassword1').value;
+  const nombreUsuario = document.getElementById('exampleInputName').value;
 
-  const contenedorObras = document.getElementById("contenedorObras");
-  const buscadorObras = document.getElementById("buscadorObras");
+  const errorEmail = document.getElementById('errorEmail');
+  const errorContra = document.getElementById('errorContra');
+  const errorNombre = document.getElementById('errorNombre');
 
-  const contenedorArtistas = document.getElementById("contenedorArtistas");
-  const buscadorArtista = document.getElementById("buscadorArtista");
+  errorEmail.innerHTML = '';
+  errorContra.innerHTML = '';
+  errorNombre.innerHTML = '';
 
-// Verificar la existencia de contenedo y buscador
-  if (contenedorObras && buscadorObras) {
-    function mostrarObras(obrasFiltradas) {
-      contenedorObras.innerHTML = "";
+  let datosValidos = true;
 
-      obrasFiltradas.map((obras) => {
-        const divObra = document.createElement("div");
-        divObra.classList.add("card", "m-2", "sinBorde");
-        divObra.style.width = "18rem";
-        divObra.style.height = "25rem";
-        divObra.innerHTML = `
-            <div class="card-body imagenParaCarrito">
-            <a href="${obras.enlace}"><img src="${obras.img}" class="card-img-top imagenProducto" alt="Imagen de ${obras.artista}"></a>
-                <div>
-                  <h5 class="card-title">${obras.nombre}</h5>
-                  <p class="card-text">Valor: ${obras.valor}</p>
-                  <button class="btn btnAgregarCarrito" onclick="agregarAlCarrito('${obras.nombre}', ${obras.valor})">Agregar al Carrito</button>
-                </div>
-            </div>
-        `;
-        contenedorObras.appendChild(divObra);
-      });
-    }
-
-    function filtrarObras() {
-      const textoBusqueda = buscadorObras.value.toLowerCase();
-      const obrasFiltradas = obras.filter((obras) =>
-        obras.nombre.toLowerCase().includes(textoBusqueda)
-      );
-
-      mostrarObras(obrasFiltradas);
-    }
-
-    buscadorObras.addEventListener("input", filtrarObras);
-    mostrarObras(obras);
-  } 
-  
-  if (contenedorArtistas && buscadorArtista) {
-    function mostrarArtistas(artistasFiltrados) {
-      contenedorArtistas.innerHTML = "";
-
-      artistasFiltrados.forEach((artista) => {
-        const divArt = document.createElement("div");
-        divArt.innerHTML = `
-            <div class="cardio mb-3">
-            <div class="cardSobre">
-                <h5 class="card-title">${artista.nombre}</h5>
-                <p class="card-text">${artista.tipo}</p>
-            <a href="${artista.enlace}" class="botonArtistas">Perfil</a>   
-            </div>
-            <img src="${artista.img}" class="img-fluid" alt="artista ${artista.nombre}">
-            </div>
-        `;
-        contenedorArtistas.appendChild(divArt);
-      });
-    }
-
-    function filtrarArtistas() {
-      const textoBusqueda = buscadorArtista.value.toLowerCase();
-      const artistasFiltrados = artistas.filter((artista) =>
-        artista.nombre.toLowerCase().includes(textoBusqueda) ||
-        artista.tipo.some((tipo) => tipo.toLowerCase().includes(textoBusqueda))
-      );
-
-      mostrarArtistas(artistasFiltrados);
-    }
-
-    buscadorArtista.addEventListener("input", filtrarArtistas);
-    mostrarArtistas(artistas);
+  if (!email) {
+    errorEmail.innerHTML = 'Por favor, ingresa tu email';
+    datosValidos = false;
+  } else if (!emailValido(email)) {
+    errorEmail.innerHTML = 'Por favor, ingresa un email válido';
+    datosValidos = false;
   }
-});
 
+  if (!contra) {
+    errorContra.innerHTML = 'Por favor, ingresa tu contraseña';
+    datosValidos = false;
+  } else if (contra.length < 8 || !caracteresEspeciales(contra)) {
+    errorContra.innerHTML = 'La contraseña debe tener al menos 8 caracteres y contener caracteres especiales';
+    datosValidos = false;
+  }
+
+  if (!nombreUsuario) {
+    errorNombre.innerHTML = 'Por favor, ingresa tu nombre artístico';
+     datosValidos = false;
+  }
+
+  if (datosValidos) {
+    const datosUsuario = document.getElementById('registroUsuario');
+    const nuevoDiv = document.createElement('div');
+    nuevoDiv.className = 'usuario'
+    nuevoDiv.innerHTML = `
+      <div class="imagenUsuarioRegistrado">
+        <img src="../assets/img/perfil.png" alt="perfil">
+      </div>
+      <div class="nombreUsuarioRegistrado">
+        <h2>${nombreUsuario}</h2>
+      </div>
+    `;
+    datosUsuario.appendChild(nuevoDiv);
+  }
+}
+
+function emailValido(email) {
+  const datosEmailValidar = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return datosEmailValidar.test(email);
+}
+
+function caracteresEspeciales(contra) {
+
+  const validarCaracterEspecial = /[!@#$%^&*(),.?":{}|<>]/;
+  return validarCaracterEspecial.test(contra);
+}
+
+const botonCrear = document.querySelector('.btn-primary');
+botonCrear.addEventListener('click', registroUsuario);
+
+
+// lógica para el carrito
+function calcularTotalCarrito(carrito) {
+  let total = 0;
+
+  for (let index = 0; index < carrito.length; index++) {
+    total += carrito[index].valor * carrito[index].cantidad;
+  }
+  return total;
+}
+
+function mostrarTotalCarrito() {
+  const totalCarrito = calcularTotalCarrito(carrito);
+  const totalCarritoLugar = document.getElementById('totalCarrito');
+  totalCarritoLugar.innerHTML = `<h4>Total carrito: $ ${totalCarrito}</h4>`;
+}
 
 function agregarAlCarrito(nombre, valor) {
   const productoExistente = carrito.find(obras => obras.nombre === nombre);
@@ -157,11 +252,13 @@ function agregarAlCarrito(nombre, valor) {
   } else {
     carrito.push({ nombre, valor, cantidad: 1 });
   }
-  
+  reproducirSonido("../assets/sound/ding-126626.mp3");
   actualizarListaCarrito();
   guardarCarritoLocalStorage();
+  actualizarContadorCarrito();
+  mostrarTotalCarrito();
+  cargarProductosDesdeLocalStorage();
 }
-
 
 function eliminarDelCarrito(index) {
   const obra = carrito[index];
@@ -170,18 +267,38 @@ function eliminarDelCarrito(index) {
   } else {
     carrito.splice(index, 1);
   }
-
-  
   actualizarListaCarrito();
   guardarCarritoLocalStorage();
+  actualizarContadorCarrito();
+  mostrarTotalCarrito();
+  cargarProductosDesdeLocalStorage();
+}
+
+function reproducirSonido(ding) {
+  const audio = new Audio(ding);
+  audio.play();
+}
+
+function actualizarContadorCarrito() {
+  const cuentaCarrito = document.querySelector('.cuentaCarrito');
+  let cantidadTotal = 0;
+
+  carrito.forEach(obra => {
+    cantidadTotal += obra.cantidad;
+  });
+
+  cuentaCarrito.textContent = cantidadTotal.toString();
 }
 
 function guardarCarritoLocalStorage() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
+actualizarContadorCarrito()
+
 function actualizarListaCarrito() {
   const listaCarrito = document.getElementById('listaCarrito');
+  if (listaCarrito) {
   listaCarrito.innerHTML = '';
 
   carrito.map((obra, index) => {
@@ -193,6 +310,52 @@ function actualizarListaCarrito() {
     `;
     listaCarrito.appendChild(item);
   });
+  }
 }
 
 
+//sweetAlert
+function vaciarCarrito() {
+  Swal.fire({
+    title: "¡Cuidado!",
+    text: "No podrás revertir esta acción.",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Vaciar carrito",
+    cancelButtonText: "Mantener carrito",
+    confirmButtonColor: "rgba(39, 55, 77, 1)",
+    cancelButtonColor: "rgba(97, 124, 145, 0.89)",
+    iconColor: "rgba(39, 55, 77, 1)",
+    customClass: {
+      container: "miSw", 
+      popup: "miSwCuadro", 
+      header: "miSwHeader", 
+      title: "miSwTitulo", 
+      icon: "miSwIcono",
+    }
+  }).then((result) => {
+    if (result.isConfirmed) {
+      carrito = [];
+      actualizarListaCarrito();
+      guardarCarritoLocalStorage();
+      actualizarContadorCarrito();
+      mostrarTotalCarrito();
+      localStorage.removeItem('carrito');
+
+      Swal.fire({
+        title: "¡Listo!",
+        text: "Carrito vaciado con éxito.",
+        icon: "success",
+        iconColor: "rgba(39, 55, 77, 1)",
+        confirmButtonColor: "rgba(39, 55, 77, 1)",
+        customClass: {
+          container: "miSw", 
+          popup: "miSwCuadro", 
+          header: "miSwHeader", 
+          title: "miSwTitulo", 
+          icon: "miSwIcono",
+        }
+      });
+    }
+  });
+}

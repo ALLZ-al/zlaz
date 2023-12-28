@@ -1,45 +1,85 @@
 
-.formularios{
-    @include flex(row, space-between,none);
-    form{
-        height: 31.25rem;
-        width: 90%;
-        padding: 1.25rem;
-        margin: 4.25rem 3.125rem;
-        background-color: $color-medio;
-        border: 1.25rem solid $color-oscuro;
+.miModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+.registrarse {
+    background-color: $color-medio;
+    border: 1.25rem solid $color-oscuro;
+    border-radius: 6.25rem 0rem;
+    width: 31.25rem;
+    height: auto;
+    padding: 5%;
+    margin: 3%;
+    h2 {
+        text-align: end;
+    }
+    .btn-close{
+        width: 1.875rem;
+        height: 1.875rem;
+        box-shadow: none;
+    }
+    button {
+        margin: .625rem;
+        background-color: $color-oscuro ;
+        border: none;
+        border-radius: 50% 0rem;
+        color: $color-contraste;
+        &:hover {
+            background-color: $color-medio;
+        }
+    }
+    input{
+        box-shadow: none;
+        border-color: none;
+    }
+    .modal-header{
+        border: none;
+    }
+    .modal-footer{
+        border: none;
     }
 }
 
-.registrarse{
-            @include flex(column, center,none);
-            border-radius: 6.25rem 0rem;
-            h2{
-                text-align: end;
-            }
-            button{
-                align-self: center;
-                background-color:$color-oscuro ;
-                border: none;
-                border-radius: 50% 0rem;
-                color: $color-contraste;
-                &:hover{
-                    background-color: $color-medio;
-                }
-            }
-        }
-        .acceder{
-            @extend .registrarse;
-            border-radius: 0rem 6.25rem;
-            button{
-                border-radius: 0rem 50%;
-                a{
-                    text-decoration: none;
-                    color: $color-contraste;
-                }
-            }
-        }
+}
+
+        
         .h1Cuenta{
             background-color: $color-medio;
             padding: 1.25rem;
         }
+
+        .usuario {
+            display: flex;
+            justify-content: start;
+            align-items: center; 
+            flex-direction: column;
+            height: 43.75rem;
+            background-color: $color-medio;
+            border: 1.25rem solid $color-oscuro;
+            border-radius: 50% 50% 0rem 0rem;
+            text-align: center;
+            .imagenUsuarioRegistrado {
+            width: 15.625rem;
+            height: 15.625rem;
+            margin-top: .9375rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: .625rem solid $color-claro;
+            margin-bottom: 3%;
+            img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            } 
+          }
+          .nombreUsuarioRegistrado{
+            font-size: 3.4375rem;
+          }
+          }
+          
+          
+
+
+
+        

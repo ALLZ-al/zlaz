@@ -1,5 +1,5 @@
 .grid-pages {
-    @include grid(repeat(3, 1fr), auto auto auto, none, none,
+    @include grid(repeat(3, 1fr), repeat(3, auto), none, none,
     "header header header"
     "main main main"
     "footer footer footer");
@@ -18,3 +18,7 @@
 .bx{
     font-size: 1.25rem;
 }
+
+
+
+

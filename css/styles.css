@@ -10,7 +10,7 @@
 .grid-pages {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto auto;
+  grid-template-rows: repeat(3, auto);
   justify-content: none;
   gap: none;
   grid-template-areas: "header header header" "main main main" "footer footer footer";
@@ -176,6 +176,9 @@ nav {
 .galeriaAbajo {
   width: 100%;
   height: auto; }
+
+.nuestrosArtistas {
+  padding: 1.875rem; }
 
 .cardio {
   position: relative;
@@ -347,9 +350,6 @@ nav {
     background-color: rgba(97, 124, 145, 0.89);
     color: aliceblue; }
 
-.bxs-cart {
-  margin-top: .625rem; }
-
 .offcanvas {
   background: linear-gradient(to right, rgba(97, 124, 145, 0.89), #8aa0ad); }
   .offcanvas .offcanvas-header {
@@ -357,6 +357,8 @@ nav {
     .offcanvas .offcanvas-header .offcanvas-title {
       font-size: 1.5625rem;
       color: aliceblue; }
+    .offcanvas .offcanvas-header .btn-close {
+      box-shadow: none; }
   .offcanvas .offcanvas-body .list-group-item {
     background-color: aliceblue;
     border: none;
@@ -364,6 +366,50 @@ nav {
     margin-top: 1.25rem;
     color: #27374d;
     font-weight: bold; }
+
+.divBotonesCarrito {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: .9375rem; }
+  .divBotonesCarrito .botonComprar, .divBotonesCarrito .botonVaciar {
+    background-color: #27374d;
+    color: aliceblue;
+    border: none;
+    border-radius: 200px 0% 200px 0%;
+    width: 6.25rem; }
+  .divBotonesCarrito .botonVaciar {
+    border-radius: 0% 200px 0% 200px; }
+
+.numeroCarrito {
+  position: relative;
+  display: inline-block; }
+
+.carritoBtn {
+  position: relative;
+  font-size: 2.0625rem;
+  margin-top: .25rem; }
+
+.cuentaCarrito {
+  position: absolute;
+  top: 9px;
+  right: .1875rem;
+  color: aliceblue;
+  padding: 4px 8px;
+  font-size: 10px;
+  z-index: 1; }
+
+#totalCarrito {
+  text-align: center;
+  color: #27374d;
+  border-radius: 0% 200px 0% 200px;
+  margin-top: 2.5rem; }
+
+.miSwCuadro {
+  color: #27374d;
+  background-color: #8aa0ad; }
+
+.miSwTitulo {
+  color: #27374d; }
 
 .masObras {
   margin: 1.25rem;
@@ -412,68 +458,68 @@ nav {
       .obraUno div .row .espacioArtista .comentarios textarea::placeholder {
         color: rgba(97, 124, 145, 0.89); }
 
-.formularios {
+.miModal {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: none; }
-  .formularios form {
-    height: 31.25rem;
-    width: 90%;
-    padding: 1.25rem;
-    margin: 4.25rem 3.125rem;
-    background-color: rgba(97, 124, 145, 0.89);
-    border: 1.25rem solid #27374d; }
-
-.registrarse, .acceder {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-content: none;
-  border-radius: 6.25rem 0rem; }
-  .registrarse h2, .acceder h2 {
-    text-align: end; }
-  .registrarse button, .acceder button {
-    align-self: center;
-    background-color: #27374d;
-    border: none;
-    border-radius: 50% 0rem;
-    color: aliceblue; }
-    .registrarse button:hover, .acceder button:hover {
-      background-color: rgba(97, 124, 145, 0.89); }
-
-.acceder {
-  border-radius: 0rem 6.25rem; }
-  .acceder button {
-    border-radius: 0rem 50%; }
-    .acceder button a {
-      text-decoration: none;
+  align-items: center; }
+  .miModal .registrarse {
+    background-color: rgba(97, 124, 145, 0.89);
+    border: 1.25rem solid #27374d;
+    border-radius: 6.25rem 0rem;
+    width: 31.25rem;
+    height: auto;
+    padding: 5%;
+    margin: 3%; }
+    .miModal .registrarse h2 {
+      text-align: end; }
+    .miModal .registrarse .btn-close {
+      width: 1.875rem;
+      height: 1.875rem;
+      box-shadow: none; }
+    .miModal .registrarse button {
+      margin: .625rem;
+      background-color: #27374d;
+      border: none;
+      border-radius: 50% 0rem;
       color: aliceblue; }
+      .miModal .registrarse button:hover {
+        background-color: rgba(97, 124, 145, 0.89); }
+    .miModal .registrarse input {
+      box-shadow: none;
+      border-color: none; }
+    .miModal .registrarse .modal-header {
+      border: none; }
+    .miModal .registrarse .modal-footer {
+      border: none; }
 
 .h1Cuenta, .h1Inicio {
   background-color: rgba(97, 124, 145, 0.89);
   padding: 1.25rem; }
 
-.miRegistro {
-  height: auto;
-  background: linear-gradient(rgba(97, 124, 145, 0.89), #8aa0ad);
-  margin: 1.25rem 3.125rem; }
-  .miRegistro .divUser {
-    display: flex;
-    flex-direction: none;
-    justify-content: center;
-    align-content: center; }
-    .miRegistro .divUser img {
-      border-radius: 50%;
-      width: 18.75rem;
-      height: 18.75rem;
-      margin: 2%; }
-  .miRegistro .datosUser {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-content: center;
-    margin-top: 10%; }
+.usuario {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  height: 43.75rem;
+  background-color: rgba(97, 124, 145, 0.89);
+  border: 1.25rem solid #27374d;
+  border-radius: 50% 50% 0rem 0rem;
+  text-align: center; }
+  .usuario .imagenUsuarioRegistrado {
+    width: 15.625rem;
+    height: 15.625rem;
+    margin-top: .9375rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.625rem solid #8aa0ad;
+    margin-bottom: 3%; }
+    .usuario .imagenUsuarioRegistrado img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%; }
+  .usuario .nombreUsuarioRegistrado {
+    font-size: 3.4375rem; }
 
 @keyframes efecto {
   0% {

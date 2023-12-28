@@ -57,15 +57,18 @@
                             <a class="nav-link" href="registro.html">Cuenta</a>
                         </li>
                         <li>
-                            <i class='bx bxs-cart' data-bs-toggle="modal" data-bs-target="#carritoModal"></i>
-                        </li>
+                            <div class="numeroCarrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                              <div class="cuentaCarrito">0</div>
+                            <i class='bx bxs-cart carritoBtn' ></i>
+                            </div>
+                            </li>
                     </ul>
                 </div>
             </div>
         </nav>
         <div class="barra">
             <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn dropdown-toggle disabled" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Tipo de arte
                 </button>
                 <ul class="dropdown-menu">
@@ -75,14 +78,20 @@
                     <li><a class="dropdown-item" href="#">Ilustraciones digitales</a></li>
                     <li><a class="dropdown-item" href="#">Papel</a></li>
                 </ul>
+                
             </div>
         </div>
 
     </header>
+
+
+    
+
     <main>
+        <div class="nuestrosArtistas">
         <h1 class="text-center">Nuetros artistas</h1>
         <p class="text-center">Conoce un poco más de quienes cautivan nuestros corazones con sus obras</p>
-        
+        </div>
         <div id="contenedorArtistas" class="flex-wrap"></div>
     
     
