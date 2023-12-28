@@ -238,11 +238,11 @@ function caracteresEspeciales(contra) {
   return validarCaracterEspecial.test(contra);
 }
 
-const botonCrear = document.getElementById('.btn-primary') !== null;
+const botonCrear = document.querySelector('.btn-primary');
 
-    if (botonCrear) {
-      botonCrear.addEventListener('click', registroUsuario);
-    } 
+if (botonCrear) {
+  botonCrear.addEventListener('click', registroUsuario);
+}
 
 // lógica para el carrito
 function calcularTotalCarrito(carrito) {
