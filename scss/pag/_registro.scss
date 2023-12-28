@@ -59,6 +59,7 @@
             border: 1.25rem solid $color-oscuro;
             border-radius: 50% 50% 0rem 0rem;
             text-align: center;
+            margin-bottom: 1%;
             .imagenUsuarioRegistrado {
             width: 15.625rem;
             height: 15.625rem;
@@ -73,12 +74,21 @@
             height: 100%;
             } 
           }
-          .nombreUsuarioRegistrado{
-            font-size: 3.4375rem;
           }
+          .seccionRegistroDatos{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            gap: 18.75rem;
+            margin-top: 5%;
+            .bx{
+                font-size: 3.125rem;
+            }
           }
           
-          
+          .visibilidadModal {
+            display: none;
+          }
 
 
 

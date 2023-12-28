@@ -20,20 +20,18 @@ function cargarProductosDesdeLocalStorage() {
   }
 }
 
-  
-
   // Función para obtener la información de artistas y obras
 async function obtenerDatos() {
   try {
     const response = await fetch('../json/datos.json');
     if (!response) {
-      throw new Error("Error al cargar el archivo JSON");
+      throw new Error('Error al cargar el archivo JSON');
     }
 
     const datos = await response.json();
     return datos;
   } catch (error) {
-    console.error("Error en la app", error);
+    console.error('Error en la app', error);
   }
 }
 
@@ -49,10 +47,10 @@ async function mostrarImagenes() {
       const indiceAleatorio = Math.floor(Math.random() * obras.length);
       const { img, enlace } = obras[indiceAleatorio];
 
-      const imgRandom = document.createElement("img");
+      const imgRandom = document.createElement('img');
       imgRandom.src = img;
 
-      const enlaceImagenRan = document.createElement("a");
+      const enlaceImagenRan = document.createElement('a');
       enlaceImagenRan.href = enlace;
       enlaceImagenRan.appendChild(imgRandom);
 
@@ -61,7 +59,7 @@ async function mostrarImagenes() {
       obras.splice(indiceAleatorio, 1);
     }
   } catch (error) {
-    console.error("Error en la app", error);
+    console.error('Error en la app', error);
   }
 }
 
@@ -69,10 +67,15 @@ async function mostrarImagenes() {
 async function mostrarObrasYArtistas() {
   try {
     const { artistas, obras } = await obtenerDatos();
-    // Lógica para mostrar las obras 
-    const contenedorObras = document.getElementById("contenedorObras");
-    const buscadorObras = document.getElementById("buscadorObras");
 
+    function quitarTildesYEspacios(cadena) {
+      return cadena.normalize('NFD').replace(/[\u0300-\u036f\s]/g, "");
+    }
+
+    // Lógica para mostrar las obras 
+    const contenedorObras = document.getElementById('contenedorObras');
+    const buscadorObras = document.getElementById('buscadorObras');
+    
     if (contenedorObras && buscadorObras) {
       function mostrarObras(obrasFiltradas) {
         contenedorObras.innerHTML = "";
@@ -96,16 +99,16 @@ async function mostrarObrasYArtistas() {
         });
       }
 
-      function filtrarObras() {
-        const textoBusqueda = buscadorObras.value.toLowerCase();
-        const obrasFiltradas = obras.filter((obra) =>
-          obra.nombre.toLowerCase().includes(textoBusqueda) ||
-          obra.tipo.toLowerCase().includes(textoBusqueda) ||
-          obra.artista.toLowerCase().includes(textoBusqueda)
-        );
+    function filtrarObras() {
+      const textoBusqueda = quitarTildesYEspacios(buscadorObras.value.toLowerCase());
+      const obrasFiltradas = obras.filter((obra) =>
+      (obra.nombre.toLowerCase()).includes(textoBusqueda) ||
+      (obra.tipo.toLowerCase()).includes(textoBusqueda) ||
+      (obra.artista.toLowerCase()).includes(textoBusqueda)
+   );
 
-        mostrarObras(obrasFiltradas);
-      }
+  mostrarObras(obrasFiltradas);
+}
 
       buscadorObras.addEventListener("input", filtrarObras);
       mostrarObras(obras);
@@ -136,7 +139,7 @@ async function mostrarObrasYArtistas() {
       }
 
       function filtrarArtistas() {
-        const textoBusqueda = buscadorArtista.value.toLowerCase();
+        const textoBusqueda = quitarTildesYEspacios(buscadorArtista.value.toLowerCase());
         const artistasFiltrados = artistas.filter((artista) =>
           artista.nombre.toLowerCase().includes(textoBusqueda) ||
           artista.tipo.some((tipo) => tipo.toLowerCase().includes(textoBusqueda))
@@ -159,7 +162,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   cargarProductosDesdeLocalStorage();
 });
 
-//sección formularios de registro
+//simulación formularios de registro
 
 function registroUsuario() {
   const email = document.getElementById('exampleInputEmail1').value;
@@ -198,15 +201,26 @@ function registroUsuario() {
   }
 
   if (datosValidos) {
+    
     const datosUsuario = document.getElementById('registroUsuario');
     const nuevoDiv = document.createElement('div');
+    
+    const visibilidadModal = document.querySelector('.miModal')
+    visibilidadModal.classList.add ('visibilidadModal')
+
     nuevoDiv.className = 'usuario'
     nuevoDiv.innerHTML = `
       <div class="imagenUsuarioRegistrado">
         <img src="../assets/img/perfil.png" alt="perfil">
       </div>
-      <div class="nombreUsuarioRegistrado">
+      <div>
         <h2>${nombreUsuario}</h2>
+        <p>Simulación de perfil</p>
+      </div>
+      <div class="seccionRegistroDatos">
+      <i class='bx bx-bookmark-heart'></i>
+      <i class='bx bx-pencil'></i>
+      <i class='bx bx-star'></i>
       </div>
     `;
     datosUsuario.appendChild(nuevoDiv);
@@ -224,9 +238,11 @@ function caracteresEspeciales(contra) {
   return validarCaracterEspecial.test(contra);
 }
 
-const botonCrear = document.querySelector('.btn-primary');
-botonCrear.addEventListener('click', registroUsuario);
+const botonCrear = document.getElementById('.btn-primary') !== null;
 
+    if (botonCrear) {
+      botonCrear.addEventListener('click', registroUsuario);
+    } 
 
 // lógica para el carrito
 function calcularTotalCarrito(carrito) {
@@ -252,6 +268,17 @@ function agregarAlCarrito(nombre, valor) {
   } else {
     carrito.push({ nombre, valor, cantidad: 1 });
   }
+  Swal.fire({
+    position: "top",
+    backdrop: false,
+    width: "250px",
+    html: "<h4>Agregado al carrito</h4> <i class='bx bxs-cart carritoBtn' ></i>",
+    showConfirmButton: false,
+    timer: 1300,
+    customClass: {
+      popup: "miSwCuadro",
+    }
+  });
   reproducirSonido("../assets/sound/ding-126626.mp3");
   actualizarListaCarrito();
   guardarCarritoLocalStorage();
@@ -313,8 +340,8 @@ function actualizarListaCarrito() {
   }
 }
 
-
 //sweetAlert
+
 function vaciarCarrito() {
   Swal.fire({
     title: "¡Cuidado!",
@@ -358,4 +385,48 @@ function vaciarCarrito() {
       });
     }
   });
+}
+
+function comprarCarrito() {
+  const totalCarritoBoton = calcularTotalCarrito(carrito);
+Swal.fire({
+  title: "¿Deseas comprar las obras?",
+  html: `<h2>El total del carrito es: $ ${totalCarritoBoton}</h2>`, 
+  showCancelButton: true,
+  confirmButtonText: "Comprar",
+  cancelButtonText: "Seguir buscando",
+  confirmButtonColor: "rgba(39, 55, 77, 1)",
+  cancelButtonColor: "rgba(97, 124, 145, 0.89)",
+  customClass: {
+    container: "miSw", 
+    popup: "miSwCuadro", 
+    header: "miSwHeader", 
+    title: "miSwTitulo", 
+    icon: "miSwIcono",
+  }
+}).then((result) => {
+  if (result.isConfirmed) {
+    carrito = [];
+    actualizarListaCarrito();
+    guardarCarritoLocalStorage();
+    actualizarContadorCarrito();
+    mostrarTotalCarrito();
+    localStorage.removeItem('carrito');
+
+    Swal.fire({
+      title: "¡Genial!",
+      text: "Compra realizada con éxito.",
+      icon: "success",
+      iconColor: "rgba(39, 55, 77, 1)",
+      confirmButtonColor: "rgba(39, 55, 77, 1)",
+      customClass: {
+        container: "miSw", 
+        popup: "miSwCuadro", 
+        header: "miSwHeader", 
+        title: "miSwTitulo", 
+        icon: "miSwIcono",
+      }
+    });
+  }
+});
 }
